@@ -28,8 +28,10 @@ def detail_page(member_num):
         return render_template('member_detail3.html', member_num=member_num)
     elif member_num == 4:
         return render_template('member_detail4.html', member_num=member_num)
-    else:
+    elif member_num == 5:
         return render_template('member_detail5.html', member_num=member_num)
+    else:
+        return render_template('member_detail6.html', member_num=member_num)
 
 
 @app.route("/visitor", methods=["POST"])
