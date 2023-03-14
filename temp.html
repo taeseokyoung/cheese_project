@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temp</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<script>
+
+
+    // index.html
+    $(document).ready(function () {
+        get_guest_book()
+    })
+
+    function get_guest_book() {
+        $('#방명록 창').empty()
+
+        fetch('/visitor').then((res) => res.json()).then((data) => {
+            let rows = data['guest_book_list']
+            rows.forEach((a) => {
+                let visitor = a['visitor']
+                let guest_book = a['guest_book']
+                let visit_time = a['visit_time']
+
+                let temp_html = `<방명록에 붙일 태그>`
+                $('#방명록 창').prepend(temp_html)
+            })
+        })
+    }
+
+    function save_guest_book() {
+        event.preventDefault();
+
+        let visitor = $('#방명록 내용 작성칸').val()
+        let guest_book = $('#방명록 닉네임 작성칸').val()
+
+
+        if (visitor.trim() === '') {
+            alert('내용을 입력해주세요')
+        } else if (guest_book.trim() === '') {
+            alert('닉네임을 입력해주세요.')
+        } else {
+            let formData = new FormData();
+            formData.append("visitor_give", visitor);
+            formData.append("guest_book_give", guest_book);
+
+            fetch('/visitor', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
+                //console.log(data)
+                alert(data["msg"])
+                get_guest_book()
+            });
+        }
+    }
+
+
+
+
+
+    // member_detail1~5.html
+    $(document).ready(function () {
+        get_card()
+    })
+
+    function get_card() {
+        $('#카드 붙이는 창').empty()
+
+        fetch('/card/팀원 번호').then((res) => res.json()).then((data) => {
+            let rows = data['card_list']
+            rows.forEach((a) => {
+                let card_title = a['card_title']
+                let card_text = a['card_text']
+                let card_img = a['card_img']
+                let object_id = a['_id']
+
+                let temp_html = `<카드 태그>
+                                 <img src="이미지 주소" onerror="document.getElementById('이미지박스id').style.display='none';">`
+                $('#카드 붙이는 창').append(temp_html)
+            })
+        })
+    }
+
+    function save_card() {
+        event.preventDefault();
+
+        let card_title = $('#카드 제목 작성칸').val()
+        let card_text = $('#카드 텍스트 작성칸').val()
+        let card_img = $('#카드 이미지URL 작성칸').val()
+        let password = $('#카드 비밀번호 작성칸').val()
+
+        let formData = new FormData();
+        formData.append("card_title_give", card_title);
+        formData.append("card_text_give", card_text);
+        formData.append("card_img_give", card_img);
+        formData.append("password_give", password);
+
+        fetch('/card/팀원 번호', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
+            //console.log(data)
+            alert(data["msg"])
+            get_card()
+        });
+    }
+
+    $('#카드 붙이는 창').on('click', '.카드 공통 클래스', function () {
+        $('html, body').css({
+            'overflow': 'hidden'
+        });
+        $('#팝업창').fadeIn(200);
+        $('#팝업창').scrollTop(0);
+
+        let object_id = (this).name
+
+        fetch(`/detail/팀원 번호/${object_id}`).then((res) => res.json()).then((data) => {
+            let rows = data['card']
+            let card_title = rows['card_title']
+            let card_text = rows['card_text']
+            let card_img = rows['card_img']
+
+            $('#제목 태그').text(card_title)
+            $('#내용 태그').text(card_text)
+            $('#이미지 태그').attr('src', card_img)
+
+
+        })
+    })
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>
