@@ -43,19 +43,47 @@
                 </div>
             </div>
         </div>
-        <div class="card_edit">
-            <div class="left">
-                <div class="card_img">
-                    <img src="" alt="">
+        <div class="card_area_edit01">
+            <div class="card_edit up">
+                <div class="left">
+                    <div class="card_img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="right">
+                    <button class="close">X</button>
+                    <input placeholder="타이틀을 입력하세요." class="c_title" type="text">
+                    <input placeholder="내용을 20자 이내로 입력하세요." class="c_txt" type="textarea" maxlength="20">
+                    <input placeholder="img url" class="c_url" type="text">
+                    <div class="pw_button">
+                        <input placeholder="비밀번호" class="c_pw" type="password"
+                            onkeydown="if (event.keyCode === 32) return false;">
+                        <button class="submit">게시</button>
+                    </div>
                 </div>
             </div>
-            <div class="right">
-                <input type="text">
-                <input type="textarea">
-                <input type="file">
-
+        </div>
+        <div class="card_area_edit02">
+            <div class="card_edit">
+                <div class="left">
+                    <div class="card_img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="right">
+                    <button class="close">X</button>
+                    <p class="ce_title">안녕</p>
+                    <p class="ce_txt">안녕2</p>
+                    <p class="ce_url">넘랴ㅐㅁ저래;ㄷㅁㄹㅁㅈ러</p>
+                    <div class="pw_button">
+                        <input placeholder="비밀번호" class="c_pw" type="password"
+                            onkeydown="if (event.keyCode === 32) return false;">
+                        <button class="submit">수정</button>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
