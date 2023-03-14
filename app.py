@@ -21,15 +21,15 @@ def home():
 @app.route('/<int:member_num>')
 def detail_page(member_num):
     if member_num == 1:
-        return render_template('member1_detail.html', member_num=member_num)
+        return render_template('member_detail1.html', member_num=member_num)
     elif member_num == 2:
-        return render_template('member2_detail.html', member_num=member_num)
+        return render_template('member_detail2.html', member_num=member_num)
     elif member_num == 3:
-        return render_template('member3_detail.html', member_num=member_num)
+        return render_template('member_detail3.html', member_num=member_num)
     elif member_num == 4:
-        return render_template('member4_detail.html', member_num=member_num)
+        return render_template('member_detail4.html', member_num=member_num)
     else:
-        return render_template('member5_detail.html', member_num=member_num)
+        return render_template('member_detail5.html', member_num=member_num)
 
 
 @app.route("/visitor", methods=["POST"])
