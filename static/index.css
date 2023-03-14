@@ -8,7 +8,7 @@
 }
 
 .Wrap {
-    background-image: url(../assets/space-wallpaper.jpg);
+    background-image: url(../static/space-wallpaper.jpg);
     background-position: center;
     background-size: 100vh;
     background-size: cover;
@@ -66,31 +66,31 @@
 }
 
 .planet_img_01 {
-    background-image: url(../assets/planet-imjh.png);
+    background-image: url(../static/planet-imjh.png);
     background-position: center;
     background-size: cover;
 }
 
 .planet_img_02 {
-    background-image: url(../assets/planet-kmh.png);
+    background-image: url(../static/planet-kmh.png);
     background-position: center;
     background-size: cover;
 }
 
 .planet_img_03 {
-    background-image: url(../assets/planet-tsk2.png);
+    background-image: url(../static/planet-tsk2.png);
     background-position: center;
     background-size: cover;
 }
 
 .planet_img_04 {
-    background-image: url(../assets/planet-ntg.png);
+    background-image: url(../static/planet-ntg.png);
     background-position: center;
     background-size: cover;
 }
 
 .planet_img_05 {
-    background-image: url(../assets/planet-ijh.png);
+    background-image: url(../static/planet-ijh.png);
     background-position: center;
     background-size: cover;
 }
