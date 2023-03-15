@@ -12,6 +12,50 @@
     <script src="../static/member_detail4.js"></script>
 </head>
 
+<script>
+    $(document).ready(function () {
+
+    })
+
+    function get_card() {
+        event.preventDefault()
+
+        $('#카드 붙이는 창').empty()
+
+        let member_num = 4
+        fetch(`/card?num=${member_num}`).then((res) => res.json()).then((data) => {
+            let rows = data['card_list']
+            rows.forEach((a) => {
+                let card_title = a['card_title']
+                let card_text = a['card_text']
+                let card_img = a['card_img']
+                let object_id = a['_id']
+
+                let temp_html = `<div class="card_img">
+                                     <a href="#" name = "${object_id}">
+                                         <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                                             src="${card_img}" alt=""
+                                             onerror="document.getElementById('이미지박스id').style.display='none';
+                                             document.getElementById('텍스트박스id').style.display='block'";
+                                     </a>
+                                 </div>
+                                 <div class="card_txt">
+                                     <a href="#" name = "${object_id}">
+                                         <h3>${card_title}</h3>
+                                         <p>${card_text}</p>
+                                     </a>
+                                 </div>`
+                $('#card_area').prepend(temp_html)
+            })
+        })
+    }
+
+    function temp() {
+        $('.card_area_edit01').fadeIn(200)
+    }
+
+</script>
+
 <body>
     <div class="planet_detail">
         <div class="top">
@@ -35,14 +79,90 @@
             </div>
         </div>
         <div class="bottom">
-            <button>+</button>
-            <div class="card_area">
+            <div id="card_area" class="card_area">
                 <div class="card_img">
-                    <img src="" alt="">
+                    <a href="#">
+                        <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                            src="../static/_126241775_getty_cats.jpeg" alt="">
+                    </a>
                 </div>
                 <div class="card_txt">
-                    <h3>카드 제목입니다.</h3>
-                    <p>카드 내용입니다.</p>
+                    <a href="#">
+                        <h3>카드 제목입니다.</h3>
+                        <p>카드 내용입니다.</p>
+                    </a>
+                </div>
+                <div class="card_img">
+                    <a href="#">
+                        <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                            src="../static/_126241775_getty_cats.jpeg" alt="">
+                    </a>
+                </div>
+                <div class="card_txt">
+                    <a href="#">
+                        <h3>카드 제목입니다.</h3>
+                        <p>카드 내용입니다.</p>
+                    </a>
+                </div>
+                <div class="card_img">
+                    <a href="#">
+                        <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                            src="../static/_126241775_getty_cats.jpeg" alt="">
+                    </a>
+                </div>
+                <div class="card_txt">
+                    <a href="#">
+                        <h3>카드 제목입니다.</h3>
+                        <p>카드 내용입니다.</p>
+                    </a>
+                </div>
+                <div class="card_img">
+                    <a href="#">
+                        <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                            src="../static/_126241775_getty_cats.jpeg" alt="">
+                    </a>
+                </div>
+                <div class="card_txt">
+                    <a href="#">
+                        <h3>카드 제목입니다.</h3>
+                        <p>카드 내용입니다.</p>
+                    </a>
+                </div>
+                <div class="card_img">
+                    <a href="#">
+                        <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                            src="../static/_126241775_getty_cats.jpeg" alt="">
+                    </a>
+                </div>
+                <div class="card_txt">
+                    <a href="#">
+                        <h3>카드 제목입니다.</h3>
+                        <p>카드 내용입니다.</p>
+                    </a>
+                </div>
+                <div class="card_img">
+                    <a href="#">
+                        <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                            src="../static/_126241775_getty_cats.jpeg" alt="">
+                    </a>
+                </div>
+                <div class="card_txt">
+                    <a href="#">
+                        <h3>카드 제목입니다.</h3>
+                        <p>카드 내용입니다.</p>
+                    </a>
+                </div>
+                <div class="card_img">
+                    <a href="#">
+                        <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                            src="../static/_126241775_getty_cats.jpeg" alt="">
+                    </a>
+                </div>
+                <div class="card_txt">
+                    <a href="#">
+                        <h3>카드 제목입니다.</h3>
+                        <p>카드 내용입니다.</p>
+                    </a>
                 </div>
             </div>
         </div>
