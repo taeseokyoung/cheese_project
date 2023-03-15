@@ -8,6 +8,20 @@
 
         /* popup-wrap */
 
+        .popupd-wrap,
+        .close_popupd_btn {
+            z-index: 1;
+        }
+
+        .popupp-wrap,
+        .close_popupp_btn {
+            z-index: 2;
+        }
+
+        .popupe-wrap,
+        .close_popupe_btn {
+            z-index: 3;
+        }
 
         .popup-wrap {
             background-color: rgba(0, 0, 0, .3);
@@ -20,8 +34,6 @@
             right: 0;
             display: none;
             padding: 15px;
-            z-index: 999;
-
         }
 
         .popup {
@@ -62,7 +74,6 @@
             font-size: 10px;
             padding: 2px 4px;
             cursor: pointer;
-            z-index: 999;
         }
 
 
@@ -138,12 +149,19 @@
         }
 
         .right_text .ce_txt {
+            min-width: 220px;
             max-width: 220px;
             max-height: 175px;
             height: 175px;
             padding: 10px 20px;
             margin: 10px auto;
-            overflow: hidden;
+            overflow: auto;
+            resize: none;
+        }
+
+        .right_text .ce_txt .time {
+            float: right;
+            color: grey;
         }
 
         .right_text .ce_url {

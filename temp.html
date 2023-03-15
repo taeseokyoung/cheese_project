@@ -94,7 +94,7 @@
         })
     }
 
-    function save_card() {
+    function add_card() {
         event.preventDefault();
 
         let member_num = 팀원 번호
@@ -157,7 +157,6 @@
     }
 
     function get_card_detail() {
-        let object_id = this.name
 
         fetch(`/detail/팀원 번호/${object_id}`).then((res) => res.json()).then((data) => {
             let rows = data['card']
