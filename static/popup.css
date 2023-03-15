@@ -6,29 +6,29 @@
             position: relative;
         }
 
-       /* popup-wrap */
+        /* popup-wrap */
 
-       
+
         .popup-wrap {
-        background-color: rgba(0, 0, 0, .3);
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        /* display: none; */
-        padding: 15px;
-        z-index: 999;
+            background-color: rgba(0, 0, 0, .3);
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            display: none;
+            padding: 15px;
+            z-index: 999;
 
-    }
+        }
 
         .popup {
-           position: fixed;
+            position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             width: 100%;
             max-width: 700px;
             height: 400px;
@@ -40,17 +40,17 @@
         }
 
         .popup-body {
-            position: relative;       
+            position: relative;
         }
-        
+
         .popup::-webkit-scrollbar {
             display: none;
         }
 
         .iframe {
-        max-width: 700px;
-        width: 100%;
-        height: 400px;
+            max-width: 700px;
+            width: 100%;
+            height: 400px;
         }
 
         .close_popup_btn {
@@ -65,9 +65,9 @@
             z-index: 999;
         }
 
-       
-       /* popup_detail */
-         
+
+        /* popup_detail */
+
         .popup_detail {
             position: fixed;
             top: 50%;
@@ -169,7 +169,7 @@
 
 
         /* opup_password */
-        
+
         .popup_password {
             position: fixed;
             top: 50%;
@@ -213,7 +213,7 @@
 
         /* popup_modify */
 
-        
+
         .popup_modify {
             position: fixed;
             top: 50%;
