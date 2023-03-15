@@ -4,6 +4,10 @@
     font-family: 'Nanum Gothic Coding', monospace;
 }
 
+body {
+    background-image: url('https://t1.daumcdn.net/cfile/tistory/99E4A4385C2BA4EF01?original');
+}
+
 a {
     text-decoration: none;
     outline: none;
@@ -74,11 +78,6 @@ h2 {
     font-size: 29px;
 }
 
-
-.planet_detail {
-    background-image: url('https://t1.daumcdn.net/cfile/tistory/99E4A4385C2BA4EF01?original');
-}
-
 .planet_detail01 {
     width: 300px;
     height: 300px;
@@ -105,16 +104,18 @@ h2 {
 }
 
 .card_img {
-    display: none;
+    /* display: none; */
     width: 302.5px;
     height: 302.5px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
     object-fit: cover;
 }
 
+.card_img a img {
+    border-radius: 20px;
+}
+
 .card_txt {
-    /* display: none; */
+    display: none;
     width: 302.5px;
     height: 302.5px;
 }

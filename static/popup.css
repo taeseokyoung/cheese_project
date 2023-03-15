@@ -149,14 +149,12 @@
         }
 
         .right_text .ce_txt {
-            min-width: 220px;
             max-width: 220px;
             max-height: 175px;
             height: 175px;
             padding: 10px 20px;
             margin: 10px auto;
             overflow: auto;
-            resize: none;
         }
 
         .right_text .ce_txt .time {
@@ -265,6 +263,12 @@
             height: 400px;
         }
 
+        .popup_modify .popup_contents .left .photo .image_box {
+            width: 400px;
+            height: 400px;
+            object-fit: contain;
+        }
+
         .popup_modify .popup_contents .right {
             max-width: 100%;
             margin: 15px 20px;
@@ -275,8 +279,7 @@
             display: flex;
         }
 
-        .popup_modify .right_title,
-        .popup_modify .ce_txt {
+        .popup_modify .right_title {
             border-bottom: 1px solid rgb(102, 102, 102, 0.1);
         }
 
@@ -302,8 +305,11 @@
         }
 
         .popup_modify .right_input .ce_txt {
+            width: 100%;
+            max-width: 246px;
             max-height: 130px;
             height: 130px;
+            resize: none;
         }
 
         .popup_modify .bottom_button {

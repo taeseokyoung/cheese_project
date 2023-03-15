@@ -1,5 +1,7 @@
 
 $(document).ready(function () {
+    get_card();
+
     $('#card_area').on('click', '.card_txt, .card_img', function () {
         let object_id = this.name
         $('#popupd_iframe').attr('src', '/popupd/' + member_num + '/' + object_id);
@@ -45,9 +47,7 @@ function re_load() {
 }
 
 function get_card() {
-    event.preventDefault()
-
-    $('#card-area').empty()
+    $('#card_area').empty()
 
     fetch(`/card?num=${member_num}`).then((res) => res.json()).then((data) => {
         let rows = data['card_list']
