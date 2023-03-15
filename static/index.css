@@ -68,8 +68,8 @@
 } 
 
 .inner figure {
-    width: 600px;
-    height: 600px;
+    width: 450px;
+    height: 450px;
     margin-bottom: 10px;
 }
 
@@ -106,4 +106,20 @@
     background-image: url(../static/planet-ijh.png);
     background-position: center;
     background-size: cover;
+}
+
+@media (max-width: 1400px){
+    .inner figure {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px){
+    .inner figure {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
 }
