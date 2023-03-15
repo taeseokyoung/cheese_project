@@ -7,118 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="../static/popup.css">
     <title>컨텐츠 관리창</title>
     <style>
         * {
             font-family: 'Noto Sans KR', sans-serif;
-            /* outline: 1px solid #bbb; */
-        }
-
-        body {
-            font-size: 11px;
-        }
-
-        .wrap {
-            position: relative;
-        }
-
-        .popup_detail {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 700px;
-            height: 400px;
-            border-radius: 5px;
-            border: 1px solid rgb(102, 102, 102, 0.1);
-            box-shadow: 3px 3px 10px rgb(102, 102, 102, 0.1);
-        }
-
-        .popup_close_btn {
-            background: inherit;
-            border: inherit;
-            position: fixed;
-            top: 15px;
-            right: 15px;
-            font-size: 10px;
-            /* padding: 2px 4px; */
-            cursor: pointer;
-        }
-
-        .popup_contents {
-            display: flex;
-        }
-
-        .popup_contents .left {
-            border-right: 1px solid rgb(102, 102, 102, 0.1);
-        }
-
-        .popup_contents .left .photo {
-            width: 400px;
-            height: 400px;
-        }
-
-        .popup_contents .right {
-            max-width: 100%;
-            margin: 15px 20px;
-        }
-
-        .popup_contents .right .right_title {
-            line-height: 1;
-            display: flex;
-        }
-
-        .right_title,
-        .ce_txt {
-            border-bottom: 1px solid rgb(102, 102, 102, 0.1);
-        }
-
-        .right_title .color {
-            font-size: 0;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #fffcad;
-            margin: 0 10px 15px 0;
-        }
-
-        .right_title .name {
-            display: inline-block;
-        }
-
-        .right_input input {
-            padding: 10px 15px;
-            margin: 10px auto;
-            border: 1px solid rgb(102, 102, 102, 0.1);
-            max-width: 220px;
-            width: 220px;
-        }
-
-        .right_input .ce_txt {
-            max-height: 130px;
-            height: 130px;
-        }
-
-        .bottom_button {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .bottom_button .btn {
-            background: #ddd;
-            border: inherit;
-            border-radius: 2px;
-            font-size: 11px;
-            padding: 4px 14px 5px 14px;
-            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="popup_detail">
-            <button class="popup_close_btn">X</button>
+        <div class="popup_modify">
             <div class="popup_contents">
                 <div class="left">
                     <div class="photo">
