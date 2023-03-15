@@ -80,7 +80,6 @@ def add_card():
     card_title_receive = request.form['card_title_give']
     card_text_receive = request.form['card_text_give']
     card_img_receive = request.form['card_img_give']
-    password_receive = request.form['password_give']
 
     time_zone = pytz.timezone('Asia/Seoul')
     current_time = datetime.now(time_zone).strftime("%y-%m-%d %H:%M")

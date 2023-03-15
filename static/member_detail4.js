@@ -40,6 +40,10 @@ function show_close_btn() {
     $('#close_popupp').show()
 }
 
+function re_load() {
+    window.location.reload();
+}
+
 function get_card() {
     event.preventDefault()
 

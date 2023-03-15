@@ -6,6 +6,10 @@ $(document).ready(function () {
     } else {
         $('#add').hide()
     }
+
+    if (member_num == 1) {
+
+    }
 })
 
 function add_card() {
@@ -25,9 +29,7 @@ function add_card() {
         //console.log(data)
         alert(data['msg'])
         if (data['reload'] == '1') {
-            window.location.reload();
+            window.parent.parent.re_load();
         }
-
-
     });
 }
