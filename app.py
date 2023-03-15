@@ -159,23 +159,7 @@ def check_edit_password(member_num, object_id):
     password_receive = request.form['password_give']
 
     if password_receive == db.password.find_one({'member_num': member_num})['password']:
-        if member_num == 1:
-            temp_card = db.member_1.find_one({'_id': ObjectId(object_id)})
-        elif member_num == 2:
-            temp_card = db.member_2.find_one({'_id': ObjectId(object_id)})
-        elif member_num == 3:
-            temp_card = db.member_3.find_one({'_id': ObjectId(object_id)})
-        elif member_num == 4:
-            temp_card = db.member_4.find_one({'_id': ObjectId(object_id)})
-        elif member_num == 5:
-            temp_card = db.member_5.find_one({'_id': ObjectId(object_id)})
-        else:
-            temp_card = db.member_6.find_one({'_id': ObjectId(object_id)})
-
-        temp_card['_id'] = str(temp_card['_id'])
-        card = temp_card
-
-        return jsonify({'card': card, 'check': '1'})
+        return jsonify({'check': '1'})
     else:
         return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'check': '0'})
 
