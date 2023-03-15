@@ -13,6 +13,11 @@
     <script src="/static/popup_detail.js"></script>
 </head>
 
+<script>
+    let member_num = {{ member_num_give }};
+    let object_id = {{ object_id_give }};
+</script>
+
 <body>
     <div class="wrap">
         <div class="popup_detail">
@@ -28,11 +33,13 @@
                         <p class="name">태서경</p>
                     </div>
                     <div class="right_text">
-                        <p class="ce_title">오늘의 기분</p>
-                        <p class="ce_txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa possimus
+                        <p id="title" class="ce_title">오늘의 기분</p>
+                        <p id="text" class="ce_txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                            possimus
                             officia repellat repudiandae error voluptatem sint blanditiis inventore dolorum corrupti.
+                            <span id="time" class="time">(23-03-16 02:47)</span>
                         </p>
-                        <p class="ce_url">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <p id="img_url" class="ce_url">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Necessitatibus,veritatis.</p>
                     </div>
                     <button class="popup_submit_btn">관리</button>

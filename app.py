@@ -50,7 +50,7 @@ def popup_password(member_num, object_id):
 
 
 @app.route("/visitor", methods=["POST"])
-def save_guest_book():
+def add_guest_book():
     visitor_receive = request.form['visitor_give']
     guest_book_receive = request.form['guest_book_give']
 
@@ -75,37 +75,38 @@ def get_guest_book():
 
 
 @app.route("/card", methods=["POST"])
-def save_card():
+def add_card():
     member_num = request.form['member_num_give']
     card_title_receive = request.form['card_title_give']
     card_text_receive = request.form['card_text_give']
     card_img_receive = request.form['card_img_give']
     password_receive = request.form['password_give']
 
-    if password_receive == db.password.find_one({'member_num': member_num})['password']:
-        doc = {
-            'card_title': card_title_receive,
-            'card_text': card_text_receive,
-            'card_img': card_img_receive,
-            'member_num': member_num
-        }
+    time_zone = pytz.timezone('Asia/Seoul')
+    current_time = datetime.now(time_zone).strftime("%y-%m-%d %H:%M")
 
-        if member_num == 1:
-            db.member_1.insert_one(doc)
-        elif member_num == 2:
-            db.member_2.insert_one(doc)
-        elif member_num == 3:
-            db.member_3.insert_one(doc)
-        elif member_num == 4:
-            db.member_4.insert_one(doc)
-        elif member_num == 5:
-            db.member_5.insert_one(doc)
-        else:
-            db.member_6.insert_one(doc)
+    doc = {
+        'card_title': card_title_receive,
+        'card_text': card_text_receive,
+        'card_img': card_img_receive,
+        'time': current_time,
+        'member_num': member_num
+    }
 
-        return jsonify({'msg': '등록 완료', 'reload': '1'})
+    if member_num == 1:
+        db.member_1.insert_one(doc)
+    elif member_num == 2:
+        db.member_2.insert_one(doc)
+    elif member_num == 3:
+        db.member_3.insert_one(doc)
+    elif member_num == 4:
+        db.member_4.insert_one(doc)
+    elif member_num == 5:
+        db.member_5.insert_one(doc)
     else:
-        return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'reload': '0'})
+        db.member_6.insert_one(doc)
+
+    return jsonify({'msg': '등록 완료', 'reload': '1'})
 
 
 @app.route("/card", methods=["GET"])

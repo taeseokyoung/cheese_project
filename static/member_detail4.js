@@ -17,7 +17,7 @@ $(document).ready(function () {
     })
 
     $('.open_popupp').click(function () {
-        $('#popupp_iframe').attr('src', '/popupp/' + member_num + '/null');
+        $('#popupp_iframe').attr('src', '/popupp/' + member_num + '/0');
         $('html, body').css({
             'overflow': 'hidden'
         });
