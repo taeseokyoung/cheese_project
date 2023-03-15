@@ -1,21 +1,94 @@
+@font-face {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 
+* {
+        outline: 1px solid #369;
+} */
+
+body{
+    font-family: 'NeoDunggeunmoPro-Regular';
+}
+
+.planet_detail{}
+
+.planet_detail::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background: url(../static/tsk_background.jpg) no-repeat center center/cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+
 .top {
-    width: 1300px;
+    width: 1000px;
+
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.flex {
+    display: flex;
+    gap: 30px;
 }
 
 .box01 {
     flex: 1;
+    width: auto;
+    height: 100%;
+    margin: 0 30px 0 0;
 }
 
 .box02 {
     display: flex;
     flex-direction: column;
     flex: 3;
+    height: 300px;
+    padding: 30px 0 0 0;
+}
+
+.box02 .flex>p {
+    font-size: 15px;
+     font-weight: 500;
+}
+
+.box02 .flex p>span{
+    font-size: 13px;
+    margin: 0 10px 0 0;
+    font-weight: 300;
+}
+
+.box02 .myname {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.box02 .des {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.box02 .blog_url a{
+    font-size: 13px;
+    font-weight: 500;
+    color: navy;
+    text-decoration:underline
+}
+
+.box02 .flex button {
+   margin: 15px 0;
+   padding: 0 20px;
 }
 
 .box03 {
@@ -27,16 +100,27 @@
 }
 
 h2 {
-    font-size: 29px;
+    font-size: 23px;
+    font-weight: 500;
 }
 
+figure {
+    padding:0;
+    margin: 0;
+    font-size: 0;
+}
 
-.planet_detail01 {
-    width: 300px;
-    height: 300px;
-    background-image: url(../assets/_126241775_getty_cats.jpeg);
-    background-position: center;
-    background-size: cover;
+.planet_detail03 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(#e0ebf1, #e0ebf1), 
+    linear-gradient(to right, red 0%,  orange 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
 .planet_detail .bottom>button {
@@ -44,9 +128,20 @@ h2 {
     margin: 0 0 0 auto;
 }
 
-.bottom {
+.middle {
     width: 1300px;
     margin: 0 auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+
+.middle .plus {
+    display: block;
+    margin: 0 0 10px auto;
+}
+
+.bottom {
+    width: 1300px;
+    margin: 30px auto 0 auto;
 }
 
 .card_area {
@@ -60,6 +155,7 @@ h2 {
     width: 302.5px;
     height: 302.5px;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
     object-fit:cover;
 }
 
@@ -67,6 +163,7 @@ h2 {
     display: block;
     width: 302.5px;
     height: 302.5px;
+
 }
 
 a {
@@ -79,12 +176,21 @@ a {
     width: 100%;
     height: 100%;
     display: block;
-    background-color: #fff;
+    background-color: inherit;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 20px;
 }
 
 .card_txt a h3 {
+    font-size: 15px;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
 
+.card_txt a p {
+    font-size: 13px;
+    line-height: 1.4;
 }
 
 input {
