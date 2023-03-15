@@ -53,7 +53,7 @@
 
             fetch('/visitor', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
                 //console.log(data)
-                alert(data["msg"])
+                alert(data['msg'])
                 get_guest_book()
             });
         }
@@ -63,15 +63,21 @@
 
 
 
-    // member_detail1~5.html
+    // member_detail1~6.html
     $(document).ready(function () {
         get_card()
+
+        $('#카드 붙이는 창').on('click', '.카드 공통 클래스', function () {
+            open_card_detail()
+            get_card_detail()
+        })
     })
 
     function get_card() {
         $('#카드 붙이는 창').empty()
 
-        fetch('/card/팀원 번호').then((res) => res.json()).then((data) => {
+        let member_num = 팀원 번호
+        fetch(`/card?num=${member_num}`).then((res) => res.json()).then((data) => {
             let rows = data['card_list']
             rows.forEach((a) => {
                 let card_title = a['card_title']
@@ -80,7 +86,9 @@
                 let object_id = a['_id']
 
                 let temp_html = `<카드 태그>
-                                 <img src="이미지 주소" onerror="document.getElementById('이미지박스id').style.display='none';">`
+                                 <버튼 태그의 name 속성에 object_id값 넣어주기>
+                                 <img src="${card_img}" onerror="document.getElementById('이미지박스id').style.display='none';" 
+                                    onerror="document.getElementById('텍스트박스id').style.display='block';">`
                 $('#카드 붙이는 창').append(temp_html)
             })
         })
@@ -89,6 +97,92 @@
     function save_card() {
         event.preventDefault();
 
+        let member_num = 팀원 번호
+        let card_title = $('#카드 제목 작성칸').val()
+        let card_text = $('#카드 텍스트 작성칸').val()
+        let card_img = $('#카드 이미지URL 작성칸').val()
+        let password = $('#카드 비밀번호 작성칸').val()
+
+        let formData = new FormData();
+        formData.append("member_num_give", member_num);
+        formData.append("card_title_give", card_title);
+        formData.append("card_text_give", card_text);
+        formData.append("card_img_give", card_img);
+        formData.append("password_give", password);
+
+        fetch('/card', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
+            //console.log(data)
+            alert(data['msg'])
+            if (data['reload'] == '1') {
+                window.location.reload();
+            }
+
+
+        });
+    }
+
+    $('#카드 붙이는 창').on('click', '.카드 버튼 클래스', function () {
+        open_card_detail()
+        get_card_detail()
+    })
+
+    function open_card_detail() {
+        $('html, body').css({
+            'overflow': 'hidden'
+        });
+        $('#카드 상세보기 팝업창').fadeIn(200);
+        $('#카드 상세보기 팝업창').scrollTop(0);
+    }
+    function close_card_detail() {
+        $('html, body').css({
+            'overflow': 'auto'
+        });
+        $("#카드 상세보기 팝업창").fadeOut(200);
+    }
+
+    function open_edit_card_detail() {
+        let object_id = this.name
+        $('#게시버튼').attr('name', object_id)
+        $('html, body').css({
+            'overflow': 'hidden'
+        });
+        $('#카드 추가,수정하기 팝업창').fadeIn(200);
+        $('#카드 추가,수정하기 팝업창').scrollTop(0);
+    }
+    function close_edit_card_detail() {
+        $('html, body').css({
+            'overflow': 'auto'
+        });
+        $("#카드 추가,수정하기 팝업창").fadeOut(200);
+    }
+
+    function get_card_detail() {
+        let object_id = this.name
+
+        fetch(`/detail/팀원 번호/${object_id}`).then((res) => res.json()).then((data) => {
+            let rows = data['card']
+            let card_title = rows['card_title']
+            let card_text = rows['card_text']
+            let card_img = rows['card_img']
+
+            $('#제목 태그').text(card_title)
+            $('#내용 태그').text(card_text)
+            $('#이미지 태그').attr('src', card_img).on('error', function () {
+                $(this).attr('src', '기본 사진으로 쓸 이미지URL 넣으세요');
+            });
+            $('#수정버튼').attr('name', object_id)
+            $('#삭제버튼').attr('name', object_id)
+        })
+    }
+
+
+
+
+
+    function edit_card_detail() {
+        event.preventDefault();
+
+        let object_id = this.name
         let card_title = $('#카드 제목 작성칸').val()
         let card_text = $('#카드 텍스트 작성칸').val()
         let card_img = $('#카드 이미지URL 작성칸').val()
@@ -100,35 +194,32 @@
         formData.append("card_img_give", card_img);
         formData.append("password_give", password);
 
-        fetch('/card/팀원 번호', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
+        fetch(`/detail/팀원 번호/${object_id}`, { method: "PUT", body: formData, }).then((res) => res.json()).then((data) => {
             //console.log(data)
-            alert(data["msg"])
-            get_card()
+            alert(data['msg'])
+            if (data['reload'] == '1') {
+                window.location.reload();
+            }
         });
     }
 
-    $('#카드 붙이는 창').on('click', '.카드 공통 클래스', function () {
-        $('html, body').css({
-            'overflow': 'hidden'
+    function delete_card_detail() {
+        event.preventDefault();
+
+        let object_id = this.name
+        let password = $('#카드 비밀번호 작성칸').val()
+
+        let formData = new FormData();
+        formData.append("password_give", password);
+
+        fetch(`/detail/팀원 번호/${object_id}`, { method: "DELETE", body: formData, }).then((res) => res.json()).then((data) => {
+            //console.log(data)
+            alert(data['msg'])
+            if (data['reload'] == '1') {
+                window.location.reload();
+            }
         });
-        $('#팝업창').fadeIn(200);
-        $('#팝업창').scrollTop(0);
-
-        let object_id = (this).name
-
-        fetch(`/detail/팀원 번호/${object_id}`).then((res) => res.json()).then((data) => {
-            let rows = data['card']
-            let card_title = rows['card_title']
-            let card_text = rows['card_text']
-            let card_img = rows['card_img']
-
-            $('#제목 태그').text(card_title)
-            $('#내용 태그').text(card_text)
-            $('#이미지 태그').attr('src', card_img)
-
-
-        })
-    })
+    }
 
 
 </script>

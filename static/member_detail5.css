@@ -1,0 +1,186 @@
+.top {
+    width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.box01 {
+    flex: 1;
+}
+
+.box02 {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+}
+
+.box03 {
+    flex: 1;
+}
+
+.info {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 29px;
+}
+
+
+.planet_detail01 {
+    width: 300px;
+    height: 300px;
+    background-image: url(../assets/_126241775_getty_cats.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.planet_detail .bottom>button {
+    display: block;
+    margin: 0 0 0 auto;
+}
+
+.bottom {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.card_area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
+.card_img {
+    width: 302.5px;
+    height: 302.5px;
+    border: 1px solid rgba(0, 0, 0, 0.5)
+}
+
+.card_txt {
+    display: none;
+    width: 302.5px;
+    height: 302.5px;
+    border: 1px solid rgba(0, 0, 0, 0.5)
+}
+
+input {
+    display: block;
+}
+
+.card_area_edit01 {
+    display: none;
+}
+
+.card_area_edit02 {
+    display: none;
+}
+
+
+
+.card_edit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+}
+
+.card_edit.up {
+    z-index: 1;
+}
+
+
+.card_edit .left {
+    flex: 1;
+}
+
+.card_edit .card_img {
+    width: 400px;
+    height: 400px;
+}
+
+.card_edit .right {
+    flex: 1;
+}
+
+.c_title {
+    width: 360px;
+    padding: 10px 20px;
+    margin: 10px auto;
+}
+
+.close {
+    display: block;
+    margin-left: auto;
+}
+
+.c_txt {
+    width: 360px;
+    height: 200px;
+    padding: 10px 20px;
+    margin: 10px auto;
+}
+
+.c_url {
+    width: 360px;
+    padding: 10px 20px;
+    margin: 10px auto;
+}
+
+.pw_button {
+    display: flex;
+    flex-direction: row;
+}
+
+.c_pw {
+    flex: 2;
+    width: 100%;
+    padding: 10px 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.submit {
+    flex: 1;
+    width: auto;
+    margin-right: 10px;
+}
+
+.delete {
+    flex: 1;
+    width: auto;
+    margin-right: 20px;
+}
+
+.ce_title {
+    width: 360px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 25px;
+}
+
+.ce_txt {
+    width: 360px;
+    height: 200px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 17px;
+}
+
+.ce_url {
+    width: 360px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 15px;
+}

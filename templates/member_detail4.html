@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/member_detail4.css">
+    <link rel="stylesheet" href="../static/common.css">
+    <title>탁근의 행성</title>
+
+    <script src="../static/member_detail4.js"></script>
+</head>
+
+<body>
+    <div class="planet_detail">
+        <div class="top">
+            <div class="box01">
+                <figure class="planet_detail01"></figure>
+            </div>
+            <div class="box02">
+                <h2>let name = ''</h2>
+                <span class="script_tag">&lt;script&gt;</span>
+                <span class="mbti">let MBTI = 'INTJ'</span>
+                <div class="blog_url">
+                    <span>let blog_url = 'https://n999.tistory.com/'</span><br>
+                    <a target="_blank" href="https://n999.tistory.com/">console.log(blog_url)</a>
+                </div>
+                <span class="script_tag">&lt;/script&gt;</span>
+            </div>
+            <div class="box03">
+                <div class="bgm">
+                    <button>bgm on</button>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <button>+</button>
+            <div class="card_area">
+                <div class="card_img">
+                    <img src="" alt="">
+                </div>
+                <div class="card_txt">
+                    <h3>카드 제목입니다.</h3>
+                    <p>카드 내용입니다.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card_area_edit01">
+            <div class="card_edit up">
+                <div class="left">
+                    <div class="card_img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="right">
+                    <button class="close">X</button>
+                    <input placeholder="타이틀을 입력하세요." class="c_title" type="text">
+                    <input placeholder="내용을 20자 이내로 입력하세요." class="c_txt" type="textarea" maxlength="20">
+                    <input placeholder="img url" class="c_url" type="text">
+                    <div class="pw_button">
+                        <input placeholder="비밀번호" class="c_pw" type="password"
+                            onkeydown="if (event.keyCode === 32) return false;">
+                        <button class="submit">게시</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card_area_edit02">
+            <div class="card_edit">
+                <div class="left">
+                    <div class="card_img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="right">
+                    <button class="close">X</button>
+                    <p class="ce_title">안녕</p>
+                    <p class="ce_txt">안녕2</p>
+                    <p class="ce_url">넘랴ㅐㅁ저래;ㄷㅁㄹㅁㅈ러</p>
+                    <div class="pw_button">
+                        <input placeholder="비밀번호" class="c_pw" type="password"
+                            onkeydown="if (event.keyCode === 32) return false;">
+                        <button class="submit">수정</button>
+                        <button class="delete">삭제</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
