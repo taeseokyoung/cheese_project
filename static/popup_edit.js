@@ -11,16 +11,15 @@ $(document).ready(function () {
 function add_card() {
     event.preventDefault();
 
-    let card_title = $('#카드 제목 작성칸').val()
-    let card_text = $('#카드 텍스트 작성칸').val()
-    let card_img = $('#카드 이미지URL 작성칸').val()
+    let card_title = $('#title_input').val()
+    let card_text = $('#text_input').val()
+    let card_img = $('#img_url_input').val()
 
     let formData = new FormData();
     formData.append("member_num_give", member_num);
     formData.append("card_title_give", card_title);
     formData.append("card_text_give", card_text);
     formData.append("card_img_give", card_img);
-    formData.append("password_give", password);
 
     fetch('/card', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
         //console.log(data)
