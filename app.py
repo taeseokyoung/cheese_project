@@ -21,32 +21,32 @@ def home():
 @app.route('/<int:member_num>')
 def detail_page(member_num):
     if member_num == 1:
-        return render_template('member_detail1.html', member_num=member_num)
+        return render_template('member_detail1.html', member_num_give=member_num)
     elif member_num == 2:
-        return render_template('member_detail2.html', member_num=member_num)
+        return render_template('member_detail2.html', member_num_give=member_num)
     elif member_num == 3:
-        return render_template('member_detail3.html', member_num=member_num)
+        return render_template('member_detail3.html', member_num_give=member_num)
     elif member_num == 4:
-        return render_template('member_detail4.html', member_num=member_num)
+        return render_template('member_detail4.html', member_num_give=member_num)
     elif member_num == 5:
-        return render_template('member_detail5.html', member_num=member_num)
+        return render_template('member_detail5.html', member_num_give=member_num)
     else:
-        return render_template('member_detail6.html', member_num=member_num)
+        return render_template('member_detail6.html', member_num_give=member_num)
 
 
 @app.route('/popupd/<int:member_num>/<string:object_id>')
 def popup_detail(member_num, object_id):
-    return render_template('popup_detail.html', member_num=member_num, object_id=object_id)
+    return render_template('popup_detail.html', member_num_give=member_num, object_id_give=object_id)
 
 
 @app.route('/popupe/<int:member_num>/<string:object_id>')
 def popup_edit(member_num, object_id):
-    return render_template('popup_edit.html', member_num=member_num, object_id=object_id)
+    return render_template('popup_edit.html', member_num_give=member_num, object_id_give=object_id)
 
 
 @app.route('/popupp/<int:member_num>/<string:object_id>')
 def popup_password(member_num, object_id):
-    return render_template('popup_password.html', member_num=member_num, object_id=object_id)
+    return render_template('popup_password.html', member_num_give=member_num, object_id_give=object_id)
 
 
 @app.route("/visitor", methods=["POST"])
@@ -133,6 +133,16 @@ def get_card():
     return jsonify({'card_list': card_list})
 
 
+@app.route("/detail/<int:member_num>", methods=["POST"])
+def check_password(member_num):
+    # password_receive = request.form['password_give']
+
+    # if password_receive == db.password.find_one({'member_num': member_num})['password']:
+    return jsonify({'check': '1'})
+    # else:
+    #     return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'check': '0'})
+
+
 @app.route("/detail/<int:member_num>/<string:object_id>", methods=["GET"])
 def get_card_detail(member_num, object_id):
     if member_num == 1:
@@ -152,16 +162,6 @@ def get_card_detail(member_num, object_id):
     card = temp_card
 
     return jsonify({'card': card})
-
-
-@app.route("/detail/<int:member_num>/<string:object_id>", methods=["POST"])
-def check_edit_password(member_num, object_id):
-    password_receive = request.form['password_give']
-
-    if password_receive == db.password.find_one({'member_num': member_num})['password']:
-        return jsonify({'check': '1'})
-    else:
-        return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'check': '0'})
 
 
 @app.route("/detail/<int:member_num>/<string:object_id>", methods=["PUT"])

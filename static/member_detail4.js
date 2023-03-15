@@ -17,7 +17,7 @@ $(document).ready(function () {
     })
 
     $('.open_popupp').click(function () {
-        $('#popupp_iframe').attr('src', '/popupp/' + member_num + '/a');
+        $('#popupp_iframe').attr('src', '/popupp/' + member_num + '/null');
         $('html, body').css({
             'overflow': 'hidden'
         });
@@ -31,6 +31,14 @@ $(document).ready(function () {
         $('#popupp').fadeOut(300);
     })
 })
+
+function hide_close_btn() {
+    $('#close_popupp').hide()
+}
+
+function show_close_btn() {
+    $('#close_popupp').show()
+}
 
 function get_card() {
     event.preventDefault()
