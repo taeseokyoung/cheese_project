@@ -68,8 +68,7 @@ h2 {
 
 .des {
   font-size: 40px;
-  margin-top: 10px;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .blog_url {
@@ -94,9 +93,11 @@ h2 {
 
 .bgm {
   border: 0;
-  margin-bottom: o;
+  margin: 0;
   height: 30px;
-  width: 130px;
+  width: 140px;
+  font-size: 30px;
+  color: white;
 }
 
 #myif {
@@ -138,6 +139,7 @@ a {
   text-decoration: none;
   outline: none;
   color: #333;
+  margin: 0px;
 }
 
 .card_txt a {
@@ -148,6 +150,7 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.planet-detail {
-  background-image: url(../static/산토리니.webp);
+.planet_detail {
+  background-image: url(../static/무지개.jpg);
+  background-size: 100%;
 }
