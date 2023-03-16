@@ -96,3 +96,23 @@ function get_card() {
       });
     });
 }
+//bgm//
+$(document).ready(function () {
+  var audioPlayer = document.getElementById('audio-player');
+  var playPauseButton = document.getElementById('play-pause-button');
+  var isPlaying = false;
+
+  playPauseButton.addEventListener('click', function () {
+    if (isPlaying) {
+      audioPlayer.pause();
+      playPauseButton.textContent = 'bgm on ♫';
+      isPlaying = false;
+    } else {
+      audioPlayer.currentTime = 3;
+      audioPlayer.play();
+      playPauseButton.textContent = 'bgm off 🔇';
+      isPlaying = true;
+    }
+  });
+});
+//
