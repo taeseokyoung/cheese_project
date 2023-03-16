@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/popup.css">
+    <link rel="stylesheet" href="/static/popup.css">
     <title>상세페이지</title>
-    <style>
 
-    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="/static/popup_detail.js"></script>
 </head>
+
+<script>
+    let member_num = {{ member_num_give }};
+    let object_id = {{ object_id_give }};
+</script>
 
 <body>
     <div class="wrap">
@@ -18,7 +24,7 @@
             <div class="popup_contents">
                 <div class="left">
                     <div class="photo">
-                        <img src="https://i.postimg.cc/TwPvd3cg/no-image.png" alt="">
+                        <img id="image_url" src="https://i.postimg.cc/TwPvd3cg/no-image.png" alt="">
                     </div>
                 </div>
                 <div class="right">
@@ -27,14 +33,16 @@
                         <p class="name">태서경</p>
                     </div>
                     <div class="right_text">
-                        <p class="ce_title">오늘의 기분</p>
-                        <p class="ce_txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa possimus
+                        <p id="title" class="ce_title">오늘의 기분</p>
+                        <p id="text" class="ce_txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                            possimus
                             officia repellat repudiandae error voluptatem sint blanditiis inventore dolorum corrupti.
+                            <span id="time" class="time">(23-03-16 02:47)</span>
                         </p>
-                        <p class="ce_url">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <p id="img_url" class="ce_url">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Necessitatibus,veritatis.</p>
                     </div>
-                    <button class="popup_submit_btn">관리</button>
+                    <button id="edit" class="popup_submit_btn">관리</button>
                 </div>
             </div>
         </div>

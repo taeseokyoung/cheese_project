@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../static/popup.css">
+    <link rel="stylesheet" href="/static/popup.css">
     <title>컨텐츠 관리창</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="/static/popup_edit.js"></script>
     <style>
         * {
             font-family: 'Noto Sans KR', sans-serif;
@@ -16,36 +20,39 @@
     </style>
 </head>
 
+<script>
+    let member_num = {{ member_num_give }};
+    let object_id = {{ object_id_give }};
+</script>
+
 <body>
     <div class="wrap">
         <div class="popup_modify">
             <div class="popup_contents">
                 <div class="left">
                     <div class="photo">
-                        <img src="https://i.postimg.cc/TwPvd3cg/no-image.png" alt="">
+                        <img id="image_box" class="image_box" src="https://i.postimg.cc/TwPvd3cg/no-image.png" alt="">
                     </div>
                 </div>
                 <div class="right">
                     <div class="right_title">
-                        <div class="color">노랑</div>
-                        <p class="name">태서경</p>
+                        <img id="profile_img" src="/static/planet_01.png" class="color" style="border-radius: 100%;">
+                        <p id="name" class="name">태서경</p>
                     </div>
                     <div class="right_input">
-                        <input style="font-family: 'Noto Sans KR'; font-size: 11px" placeholder="제목"
-                            onfocus="this.placeholder=''" onblur="this.placeholder='제목'" class="ce_title" type="text"
-                            onkeydown="if (event.keyCode === 32) return false;">
-                        <input style="font-family: 'Noto Sans KR'; font-size: 11px" placeholder="내용"
-                            onfocus="this.placeholder=''" onblur="this.placeholder='내용'" class="ce_txt" type="password"
-                            onkeydown="if (event.keyCode === 32) return false;">
-                        <input style="font-family: 'Noto Sans KR'; font-size: 11px" placeholder="이미지 URL"
-                            onfocus="this.placeholder=''" onblur="this.placeholder='이미지 URL'" class="ce_url"
-                            type="password" onkeydown="if (event.keyCode === 32) return false;">
+                        <input id="title_input" style="font-family: 'Noto Sans KR'; font-size: 11px" placeholder="제목"
+                            onfocus="this.placeholder=''" onblur="this.placeholder='제목'" class="ce_title" type="text">
+                        <textarea id="text_input" style="font-family: 'Noto Sans KR'; font-size: 11px" placeholder="내용"
+                            onfocus="this.placeholder=''" onblur="this.placeholder='내용'" class="ce_txt"></textarea>
+                        <input id="img_url_input" style="font-family: 'Noto Sans KR'; font-size: 11px"
+                            placeholder="이미지 URL" onfocus="this.placeholder=''" onblur="this.placeholder='이미지 URL'"
+                            class="ce_url" type="text">
                     </div>
                     <div class="bottom_button">
-                        <button class="popup_submit btn">이미지 미리보기</button>
-                        <button class="popup_delete btn">삭제</button>
-                        <button class="popup_edit btn">수정</button>
-                        <button class="popup_add btn">추가</button>
+                        <button id="preview" class="popup_submit btn">이미지 미리보기</button>
+                        <button id="delete" class="popup_delete btn">삭제</button>
+                        <button id="edit" class="popup_edit btn">수정</button>
+                        <button id="add" class="popup_add btn">추가</button>
                     </div>
                 </div>
             </div>
