@@ -23,10 +23,10 @@ body {
   align-items: center;
   justify-content: center;
 
-  border-bottom: 20px solid aliceblue;
   background-image: url(../static/number2.webp);
   background-position: center 60%;
   background-size: cover;
+  border-radius: 150px;
 }
 
 .box01 {
@@ -61,6 +61,7 @@ h2 {
 
 .mbti {
   margin-top: 10px;
+  margin-bottom: 0px;
   color: white;
   font-size: 30px;
 }
@@ -68,11 +69,13 @@ h2 {
 .des {
   font-size: 40px;
   margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 .blog_url {
   margin-bottom: 0;
   font-size: 25px;
+  color: white;
 }
 
 .planet_detail02 {
@@ -89,11 +92,11 @@ h2 {
   margin: 0 0 0 auto;
 }
 
-#mybgm {
-  background-color: #e8c7c7;
+.bgm {
   border: 0;
   margin-bottom: o;
   height: 30px;
+  width: 130px;
 }
 
 #myif {
@@ -103,8 +106,7 @@ h2 {
 .bottom {
   width: 1300px;
   margin: 0 auto;
-  border-top: 1px dotted rgba(0, 0, 0, 0.5);
-  background-color: aliceblue;
+  border-radius: 200px;
 }
 
 .card_area {
@@ -115,6 +117,7 @@ h2 {
   background-color: lightcyan;
   margin: 0px;
   padding: 0px;
+  border-radius: 200px;
 }
 
 .card_img {
@@ -128,6 +131,7 @@ h2 {
   width: 302.5px;
   height: 302.5px;
   border: 10px double #ea9e9e;
+  border-radius: 20px;
 }
 
 a {
@@ -142,4 +146,8 @@ a {
   display: block;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.planet-detail {
+  background-image: url(../static/산토리니.webp);
 }
