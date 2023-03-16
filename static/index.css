@@ -116,14 +116,22 @@
     background-size: cover;
 }
 
+<<<<<<< HEAD
 /* 20230316 방명록 추가중 */
 
+=======
+>>>>>>> 06f4c69 ([수정, 추가] 방명록 추가중c:/Users/choco/Desktop/cheese_project/venv/Scripts/python.exe c:/Users/choco/Desktop/cheese_project/app.py)
 .guest_title {
     text-align: center;
     color: #fff;
     margin: 0 0 30px ;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 06f4c69 ([수정, 추가] 방명록 추가중c:/Users/choco/Desktop/cheese_project/venv/Scripts/python.exe c:/Users/choco/Desktop/cheese_project/app.py)
 .guest_book {
     width: 1000px;
     height: 600px;
@@ -135,11 +143,14 @@
 }
 .guest_book .guest_write {
     margin: 0 0 30px 0;}
+<<<<<<< HEAD
 /* 
 .guest_card_area{
     display: grid;
     grid-template-columns: 1fr 100% ;
 } */
+=======
+>>>>>>> 06f4c69 ([수정, 추가] 방명록 추가중c:/Users/choco/Desktop/cheese_project/venv/Scripts/python.exe c:/Users/choco/Desktop/cheese_project/app.py)
 
 .guest_book .guest_write,
 .guest_book .guest_card {
@@ -149,12 +160,17 @@
     /* margin: 0 auto 0 15px; */
 }
 
+<<<<<<< HEAD
 .guest_book .guest_card {
     margin: 0 0 10px 0;
 }
 
 .guest_book .guest_write input {
     padding: 10px 15px;
+=======
+.guest_book .guest_write input {
+    padding: 5px 10px;
+>>>>>>> 06f4c69 ([수정, 추가] 방명록 추가중c:/Users/choco/Desktop/cheese_project/venv/Scripts/python.exe c:/Users/choco/Desktop/cheese_project/app.py)
     margin: 0 10px;
 }
 
@@ -177,6 +193,7 @@
      flex: 0.3;
 }
 
+<<<<<<< HEAD
 .guest_book .guest_write .time {
     display: none;
 }
@@ -186,6 +203,12 @@
     width: 100%;
     margin: 0 10px;
     padding: 20px;
+=======
+.guest_card {
+    width: auto;
+    margin: 0 10px;
+    padding: 30px;
+>>>>>>> 06f4c69 ([수정, 추가] 방명록 추가중c:/Users/choco/Desktop/cheese_project/venv/Scripts/python.exe c:/Users/choco/Desktop/cheese_project/app.py)
     background: #fff;
     border-radius: 3px;
 }
@@ -195,6 +218,7 @@
     margin: 0 10px;
 }
 
+<<<<<<< HEAD
 .guest_card p.guest_name {
     font-size: 13px;
     font-weight: 500;
@@ -206,6 +230,8 @@
     font-weight: 300;
     color: #777;
 }
+=======
+>>>>>>> 06f4c69 ([수정, 추가] 방명록 추가중c:/Users/choco/Desktop/cheese_project/venv/Scripts/python.exe c:/Users/choco/Desktop/cheese_project/app.py)
 
 
 
