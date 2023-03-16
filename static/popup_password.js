@@ -22,7 +22,7 @@ function check_password() {
     fetch(`/detail/${member_num}`, { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
         //console.log(data)
         if (data['check'] == '1') {
-            $('#popupe_iframe').attr('src', '/popupe/' + member_num + '/' + object_id);
+            $('#popupe_iframe').attr('src', "/popupe?member_num=" + member_num + "&object_id=" + object_id);
             $('#popupe').fadeIn(300);
             window.parent.hide_close_btn();
         } else {
