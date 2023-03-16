@@ -4,11 +4,11 @@ $(document).ready(function () {
 
     $('.planet').slick({
         infinite: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         centerMode: true,
         arrows: false,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 1000,
         centerPadding: '60px',
         slidesToShow: 3,
         responsive: [
