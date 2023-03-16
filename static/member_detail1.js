@@ -35,19 +35,16 @@ $(document).ready(function () {
 })
 //bgm//
 $(document).ready(function() {
-    var audioPlayer = document.getElementById("audio-player");
-    var playPauseButton = document.getElementById("play-pause-button");
-    var isPlaying = false;
-  
-    playPauseButton.addEventListener("click", function() {
-      if (isPlaying) {
-        audioPlayer.pause();
-        playPauseButton.textContent = "음악 on ♫";
-        isPlaying = false;
+    var bgm = document.getElementById("bgm");
+    var playPauseButton = $("#play-pause-button");
+    
+    playPauseButton.on("click", function() {
+      if (bgm.paused) {
+        bgm.play();
+        playPauseButton.html("bgm off ♪");
       } else {
-        audioPlayer.play();
-        playPauseButton.textContent = "음악 off ♪";
-        isPlaying = true;
+        bgm.pause();
+        playPauseButton.html("bgm on ♫");
       }
     });
   });
@@ -76,7 +73,7 @@ function get_card() {
             let object_id = a['_id']
 
             let temp_html = `<div id="card_img${index}" class="card_img open_card" name="${object_id}">
-                                <a href="">
+                                <a href="#">
                                     <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
                                         src="${card_img}" alt=""
                                         onerror="document.getElementById('card_img${index}').style.display='none';
@@ -84,7 +81,7 @@ function get_card() {
                                 </a>
                              </div>
                              <div id="card_txt${index}" class="card_txt open_card" name="${object_id}">
-                                 <a href="">
+                                 <a href="#">
                                      <h3>${card_title}</h3>
                                      <p>${card_text}</p>
                                  </a>
