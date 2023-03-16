@@ -152,14 +152,6 @@ input {
   display: block;
 }
 
-.card_area_edit01 {
-  display: none;
-}
-
-.card_area_edit02 {
-  display: none;
-}
-
 .card_edit {
   position: absolute;
   top: 50%;
