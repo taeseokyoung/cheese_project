@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Gothic+Coding&family=Noto+Serif+KR&display=swap');
     </style>
     ;
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-        <script src="static/member_detail2.js"></script>
-    <link rel="stylesheet" href="../static/common.css">
-    <link rel="stylesheet" href="../static/popup.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="static/member_detail2.js"></script>
+    <link rel="stylesheet" href="../static/common.css" />
+    <link rel="stylesheet" href="../static/popup.css" />
     <link rel="stylesheet" href="../static/member_detail2.css" />
     <title>명흠의 행성</title>
   </head>
-
+  <script>
+    let member_num = "{{ member_num_give }}";
+</script>
   <body>
     <div class="planet_detail">
       <div class="top">
@@ -34,156 +40,210 @@
             <a target="_blank" href="https://velog.io/@develheum"
               >https://velog.io/@develheum
             </a>
-          </div>
-        </div>
+        </div>        
         <div class="box03">
-            <button id="mybgm">↓↓ bgm ↓↓</button>
-            <iframe id="myif" width="78" height="30" src="https://www.youtube.com/embed/74_yqNBhQbA?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
+          <button id="mybgm">↓↓ bgm ↓↓</button>
+          <iframe
+            id="myif"
+            width="78"
+            height="30"
+            src="https://www.youtube.com/embed/74_yqNBhQbA?start=3"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
-      <div class="bottom">
-        <button id="openp">+</button>
-          <div class="card_area" id="card_area">
-            <div class="card_img">
-              <a href="#">
-                <img
-                  style="width: 302.5px; height: 302.5px; object-fit: cover; border: 10px double #ea9e9e;"
-                  src="../static/_126241775_getty_cats.jpeg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="card_txt">
-              <a href="">
-                <h3>카드 제목입니다.</h3>
-                <p>카드 내용입니다.</p>
-              </a>
-            </div>
-            <div class="card_img">
-              <a href="#">
-                <img
-                  style="width: 302.5px; height: 302.5px; object-fit: cover; border: 10px double #ea9e9e;"
-                  src="../static/_126241775_getty_cats.jpeg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="card_txt">
-              <a href="">
-                <h3>카드 제목입니다.</h3>
-                <p>카드 내용입니다.</p>
-              </a>
-            </div>
-            <div class="card_img">
-              <a href="#">
-                <img
-                  style="width: 302.5px; height: 302.5px; object-fit: cover; border: 10px double #ea9e9e;"
-                  src="../static/_126241775_getty_cats.jpeg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="card_txt">
-              <a href="">
-                <h3>카드 제목입니다.</h3>
-                <p>카드 내용입니다.</p>
-              </a>
-            </div>
-            <div class="card_img">
-              <a href="#">
-                <img
-                  style="width: 302.5px; height: 302.5px; object-fit: cover; border: 10px double #ea9e9e;"
-                  src="../static/_126241775_getty_cats.jpeg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="card_txt">
-              <a href="">
-                <h3>카드 제목입니다.</h3>
-                <p>카드 내용입니다.</p>
-              </a>
-            </div>
-            <div class="card_img">
-              <a href="#">
-                <img
-                  style="width: 302.5px; height: 302.5px; object-fit: cover; border: 10px double #ea9e9e;"
-                  src="../static/_126241775_getty_cats.jpeg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="card_txt">
-              <a href="">
-                <h3>카드 제목입니다.</h3>
-                <p>카드 내용입니다.</p>
-              </a>
-            </div>
-            <div class="card_img">
-              <a href="#">
-                <img
-                  style="width: 302.5px; height: 302.5px; object-fit: cover; border: 10px double #ea9e9e;"
-                  src="../static/_126241775_getty_cats.jpeg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="card_txt">
-              <a href="">
-                <h3>카드 제목입니다.</h3>
-                <p>카드 내용입니다.</p>
-              </a>
-            </div>
-            <div class="card_img">
-              <a href="#">
-                <img
-                  style="width: 302.5px; height: 302.5px; object-fit: cover; border: 10px double #ea9e9e;"
-                  src="../static/_126241775_getty_cats.jpeg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="card_txt">
-              <a href="">
-                <h3>카드 제목입니다.</h3>
-                <p>카드 내용입니다.</p>
-              </a>
-            </div>
-            <div class="card_img">
-              <a href="#">
-                <img
-                  style="width: 302.5px; height: 302.5px; object-fit: cover; border: 10px double #ea9e9e;"
-                  src="../static/_126241775_getty_cats.jpeg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="card_txt">
-              <a href="">
-                <h3>카드 제목입니다.</h3>
-                <p>카드 내용입니다.</p>
-              </a>
-            </div>
-             <!-- 상세보기 팝업 -->
+    </div>
+    <div class="bottom">
+      <button id="openp">+</button>
+      <div class="card_area" id="card_area">
+        <div class="card_img">
+          <a href="/">
+            <img
+              style="
+                width: 302.5px;
+                height: 302.5px;
+                object-fit: cover;
+                border: 10px double #ea9e9e;
+              "
+              src="../static/_126241775_getty_cats.jpeg"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="card_txt">
+          <a href="">
+            <h3>카드 제목입니다.</h3>
+            <p>카드 내용입니다.</p>
+          </a>
+        </div>
+        <div class="card_img">
+          <a href="#">
+            <img
+              style="
+                width: 302.5px;
+                height: 302.5px;
+                object-fit: cover;
+                border: 10px double #ea9e9e;
+              "
+              src="../static/_126241775_getty_cats.jpeg"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="card_txt">
+          <a href="">
+            <h3>카드 제목입니다.</h3>
+            <p>카드 내용입니다.</p>
+          </a>
+        </div>
+        <div class="card_img">
+          <a href="#">
+            <img
+              style="
+                width: 302.5px;
+                height: 302.5px;
+                object-fit: cover;
+                border: 10px double #ea9e9e;
+              "
+              src="../static/_126241775_getty_cats.jpeg"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="card_txt">
+          <a href="">
+            <h3>카드 제목입니다.</h3>
+            <p>카드 내용입니다.</p>
+          </a>
+        </div>
+        <div class="card_img">
+          <a href="#">
+            <img
+              style="
+                width: 302.5px;
+                height: 302.5px;
+                object-fit: cover;
+                border: 10px double #ea9e9e;
+              "
+              src="../static/_126241775_getty_cats.jpeg"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="card_txt">
+          <a href="">
+            <h3>카드 제목입니다.</h3>
+            <p>카드 내용입니다.</p>
+          </a>
+        </div>
+        <div class="card_img">
+          <a href="#">
+            <img
+              style="
+                width: 302.5px;
+                height: 302.5px;
+                object-fit: cover;
+                border: 10px double #ea9e9e;
+              "
+              src="../static/_126241775_getty_cats.jpeg"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="card_txt">
+          <a href="">
+            <h3>카드 제목입니다.</h3>
+            <p>카드 내용입니다.</p>
+          </a>
+        </div>
+        <div class="card_img">
+          <a href="#">
+            <img
+              style="
+                width: 302.5px;
+                height: 302.5px;
+                object-fit: cover;
+                border: 10px double #ea9e9e;
+              "
+              src="../static/_126241775_getty_cats.jpeg"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="card_txt">
+          <a href="">
+            <h3>카드 제목입니다.</h3>
+            <p>카드 내용입니다.</p>
+          </a>
+        </div>
+        <div class="card_img">
+          <a href="#">
+            <img
+              style="
+                width: 302.5px;
+                height: 302.5px;
+                object-fit: cover;
+                border: 10px double #ea9e9e;
+              "
+              src="../static/_126241775_getty_cats.jpeg"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="card_txt">
+          <a href="">
+            <h3>카드 제목입니다.</h3>
+            <p>카드 내용입니다.</p>
+          </a>
+        </div>
+        <div class="card_img">
+          <a href="#">
+            <img
+              style="
+                width: 302.5px;
+                height: 302.5px;
+                object-fit: cover;
+                border: 10px double #ea9e9e;
+              "
+              src="../static/_126241775_getty_cats.jpeg"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="card_txt">
+          <a href="">
+            <h3>카드 제목입니다.</h3>
+            <p>카드 내용입니다.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 상세보기 팝업 -->
     <div class="popup-wrap popupd-wrap" id="popupd">
       <div class="popup">
-          <div class="popup-body">
-              <button id="close_popupd" class="close_popup_btn close_popupd_btn">X</button>
-              <iframe src="#" id="popupd_iframe" class="iframe"></iframe>
-          </div>
+        <div class="popup-body">
+          <button id="close_popupd" class="close_popup_btn close_popupd_btn">
+            X
+          </button>
+          <iframe src="#" id="popupd_iframe" class="iframe"></iframe>
+        </div>
       </div>
-  </div>
+    </div>
 
-  <!-- 비밀번호 팝업 -->
-  <div class="popup-wrap popupp-wrap" id="popupp">
+    <!-- 비밀번호 팝업 -->
+    <div class="popup-wrap popupp-wrap" id="popupp">
       <div class="popup">
-          <div class="popup-body">
-              <button id="close_popupp" class="close_popup_btn close_popupp_btn">X</button>
-              <iframe src="#" id="popupp_iframe" class="iframe"></iframe>
-          </div>
+        <div class="popup-body">
+          <button id="close_popupp" class="close_popup_btn close_popupp_btn">
+            X
+          </button>
+          <iframe src="#" id="popupp_iframe" class="iframe"></iframe>
+        </div>
       </div>
-  </div>  
+    </div>
   </body>
 </html>
-

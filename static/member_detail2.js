@@ -13,13 +13,13 @@ $(document).ready(function () {
 
   $(function () {
     $('#openp').on('click', function () {
-      open('popupp');
+      $('#popupp').fadeIn(300);
     });
   });
   // popup_detail.html 팝업창을 띄우는 부분 (카드 상세보기 띄우기)
   $('#card_area').on('click', '.open_card', function () {
     let object_id = this.id;
-    $('#popupd_iframe').attr('src', '/popupd/' + 2 + '/' + object_id);
+    $('#popupd_iframe').attr('src', '/popupd/' + member_num + '/' + object_id);
     $('html, body').css({
       overflow: 'hidden',
     });
@@ -36,7 +36,7 @@ $(document).ready(function () {
 
   // popup_password.html 팝업창을 띄우는 부분 (비밀번호 확인창 띄우기)
   $('.openp').click(function () {
-    $('#popupp_iframe').attr('src', '/popupp?member_num=' + 2 + '&object_id=0');
+    $('#popupp_iframe').attr('src', '/popupp?member_num=2&object_id=0');
     $('html, body').css({
       overflow: 'hidden',
     });
@@ -67,7 +67,7 @@ function re_load() {
 function get_card() {
   $('#card_area').empty();
 
-  fetch(`/card?num=${2}`)
+  fetch(`/card?num=${member_num}`)
     .then((res) => res.json())
     .then((data) => {
       let rows = data['card_list'];
@@ -83,7 +83,7 @@ function get_card() {
                                           src="${card_img}" alt="">
                                   </a>
                               </div>
-                              <div id="${object_id}" class="card_txt open_card">
+                              <div id="${a[object_id]}" class="card_txt open_card">
                                   <a href="#">
                                       <h3>${card_title}</h3>
                                       <p>${card_text}</p>
