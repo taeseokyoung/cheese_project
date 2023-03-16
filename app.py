@@ -31,7 +31,7 @@ def detail_page(member_num):
     elif member_num == 5:
         return render_template('member_detail5.html', member_num_give=member_num)
     else:
-        return render_template('member_detail6.html', member_num_give=member_num)
+        return render_template('member_detail6.html', member_num_give=6)
 
 
 @app.route('/popupd')
@@ -89,7 +89,7 @@ def add_card():
     card_img_receive = request.form['card_img_give']
 
     time_zone = pytz.timezone('Asia/Seoul')
-    current_time = datetime.now(time_zone).strftime("%y-%m-%d %H:%M")
+    current_time = datetime.now(time_zone).strftime("%Y-%m-%d %H:%M")
 
     doc = {
         'card_title': card_title_receive,
