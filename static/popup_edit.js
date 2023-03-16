@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $('#preview').on('click', function () {
         let img_url = $('#img_url_input').val()
-        $('#image_box').attr('src', img_url)
+        $('#image_url').attr('src', img_url)
     })
 
     $('#add').on('click', function () {
