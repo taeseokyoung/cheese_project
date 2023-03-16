@@ -112,7 +112,7 @@ def add_card():
     else:
         db.member_6.insert_one(doc)
 
-    return jsonify({'msg': '등록 완료', 'reload': '1'})
+    return jsonify({'msg': '등록 완료'})
 
 
 @app.route("/card", methods=["GET"])
@@ -174,42 +174,38 @@ def get_card_detail(member_num):
 
 
 @app.route("/detail/<int:member_num>", methods=["PUT"])
-def edit_card_detail(member_num, object_id):
+def edit_card_detail(member_num):
     object_id = request.args.get('object_id')
 
     card_title_receive = request.form['card_title_give']
     card_text_receive = request.form['card_text_give']
     card_img_receive = request.form['card_img_give']
-    password_receive = request.form['password_give']
 
-    if password_receive == db.password.find_one({'member_num': member_num})['password']:
-        doc = {
-            'card_title': card_title_receive,
-            'card_text': card_text_receive,
-            'card_img': card_img_receive,
-            'member_num': member_num
-        }
+    doc = {
+        'card_title': card_title_receive,
+        'card_text': card_text_receive,
+        'card_img': card_img_receive,
+        'member_num': member_num
+    }
 
-        if member_num == 1:
-            db.member_1.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
-        elif member_num == 2:
-            db.member_2.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
-        elif member_num == 3:
-            db.member_3.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
-        elif member_num == 4:
-            db.member_4.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
-        elif member_num == 5:
-            db.member_5.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
-        else:
-            db.member_6.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
-
-        return jsonify({'msg': '수정 완료', 'reload': '1'})
+    if member_num == 1:
+        db.member_1.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
+    elif member_num == 2:
+        db.member_2.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
+    elif member_num == 3:
+        db.member_3.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
+    elif member_num == 4:
+        db.member_4.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
+    elif member_num == 5:
+        db.member_5.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
     else:
-        return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'reload': '0'})
+        db.member_6.update_one({'_id': ObjectId(object_id)}, {'$set': doc})
+
+    return jsonify({'msg': '수정 완료'})
 
 
 @app.route("/detail/<int:member_num>", methods=["DELETE"])
-def delete_card_detail(member_num, object_id):
+def delete_card_detail(member_num):
     object_id = request.args.get('object_id')
 
     password_receive = request.form['password_give']
