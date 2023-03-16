@@ -34,7 +34,6 @@ $(document).ready(function () {
     })
 })
 //bgm//
-<<<<<<< HEAD
 $(document).ready(function() {
     var bgm = document.getElementById("bgm");
     var playPauseButton = $("#play-pause-button");
@@ -47,23 +46,6 @@ $(document).ready(function() {
         bgm.pause();
         playPauseButton.html("bgm on ♫");
       }
-=======
-$(document).ready(function () {
-    var audioPlayer = document.getElementById("audio-player");
-    var playPauseButton = document.getElementById("play-pause-button");
-    var isPlaying = false;
-
-    playPauseButton.addEventListener("click", function () {
-        if (isPlaying) {
-            audioPlayer.pause();
-            playPauseButton.textContent = "음악 on ♫";
-            isPlaying = false;
-        } else {
-            audioPlayer.play();
-            playPauseButton.textContent = "음악 off ♪";
-            isPlaying = true;
-        }
->>>>>>> refs/remotes/origin/main
     });
 });
 //
@@ -100,7 +82,7 @@ function get_card() {
             let object_id = a['_id']
 
             let temp_html = `<div id="card_img${index}" class="card_img open_card" name="${object_id}">
-                                <a href="#">
+                                <a href="">
                                     <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
                                         src="${card_img}" alt=""
                                         onerror="document.getElementById('card_img${index}').style.display='none';
@@ -108,7 +90,7 @@ function get_card() {
                                 </a>
                              </div>
                              <div id="card_txt${index}" class="card_txt open_card" name="${object_id}">
-                                 <a href="#">
+                                 <a href="">
                                      <h3>${card_title}</h3>
                                      <p>${card_text}</p>
                                  </a>
