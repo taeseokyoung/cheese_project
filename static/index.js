@@ -2,36 +2,36 @@ $(document).ready(function () {
 
     // 우주 슬라이드 - 슬릭 슬라이드 사용
 
-    $('.planet').slick({
-        infinite: true,
-        pauseOnHover: false,
-        centerMode: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 400,
-        centerPadding: '50px',
-        slidesToShow: 3,
-        responsive: [
-            {
-                breakpoint: 1400,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 2
-                }
-            }
-        ]
-    });
+    // $('.planet').slick({
+    //     infinite: true,
+    //     pauseOnHover: false,
+    //     centerMode: true,
+    //     arrows: false,
+    //     autoplay: true,
+    //     autoplaySpeed: 400,
+    //     centerPadding: '50px',
+    //     slidesToShow: 3,
+    //     responsive: [
+    //         {
+    //             breakpoint: 1400,
+    //             settings: {
+    //                 arrows: false,
+    //                 centerMode: true,
+    //                 centerPadding: '40px',
+    //                 slidesToShow: 3
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 768,
+    //             settings: {
+    //                 arrows: false,
+    //                 centerMode: true,
+    //                 centerPadding: '40px',
+    //                 slidesToShow: 2
+    //             }
+    //         }
+    //     ]
+    // });
 
 });
 
