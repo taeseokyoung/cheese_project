@@ -10,7 +10,6 @@
 }
 
 body {
-    background-image: url('https://t1.daumcdn.net/cfile/tistory/99E4A4385C2BA4EF01?original');
 }
 
 a {
@@ -139,4 +138,8 @@ h2 {
     padding-left: 20px;
     padding-right: 20px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#background {
+
 }
