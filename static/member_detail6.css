@@ -10,7 +10,6 @@
 }
 
 body {
-    background-image: url('https://t1.daumcdn.net/cfile/tistory/99E4A4385C2BA4EF01?original');
 }
 
 a {
@@ -86,7 +85,7 @@ h2 {
 .planet_detail01 {
     width: 300px;
     height: 300px;
-    background-image: url(../static/_126241775_getty_cats.jpeg);
+    background-image: url(https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F79579db1-eabe-4178-a765-ca5844d249b9%2FIMG_3795.jpg?table=block&id=fafe0a8f-5133-4b6c-813b-3e3135580253&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=&cache=v2);
     background-position: center;
     background-size: cover;
 }
@@ -139,4 +138,8 @@ h2 {
     padding-left: 20px;
     padding-right: 20px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#background {
+
 }

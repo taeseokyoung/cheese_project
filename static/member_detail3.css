@@ -4,26 +4,29 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* 
 * {
         outline: 1px solid #369;
 } */
 
-body{
+body {
     font-family: 'NeoDunggeunmoPro-Regular';
+    overflow-x: hidden;
 }
 
-.planet_detail{}
+.planet_detail {}
 
-.planet_detail::before{
+.planet_detail::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100vw;
     height: 100vh;
-    background: url(../static/tsk_background.jpg) no-repeat center center/cover;
+    background: url(../static/tsk_background.jpg) repeat center center/cover;
     opacity: 0.5;
     z-index: -1;
 }
@@ -60,10 +63,10 @@ body{
 
 .box02 .flex>p {
     font-size: 15px;
-     font-weight: 500;
+    font-weight: 500;
 }
 
-.box02 .flex p>span{
+.box02 .flex p>span {
     font-size: 13px;
     margin: 0 10px 0 0;
     font-weight: 300;
@@ -79,16 +82,16 @@ body{
     font-weight: 500;
 }
 
-.box02 .blog_url a{
+.box02 .blog_url a {
     font-size: 13px;
     font-weight: 500;
     color: navy;
-    text-decoration:underline
+    text-decoration: underline
 }
 
 .box02 .flex button {
-   margin: 15px 0;
-   padding: 0 20px;
+    margin: 15px 0;
+    padding: 0 20px;
 }
 
 .box03 {
@@ -105,7 +108,7 @@ h2 {
 }
 
 figure {
-    padding:0;
+    padding: 0;
     margin: 0;
     font-size: 0;
 }
@@ -117,8 +120,8 @@ figure {
     margin: 10px;
     border: 3px solid transparent;
     border-radius: 50%;
-    background-image: linear-gradient(#e0ebf1, #e0ebf1), 
-    linear-gradient(to right, red 0%,  orange 100%);
+    background-image: linear-gradient(#e0ebf1, #e0ebf1),
+        linear-gradient(to right, red 0%, orange 100%);
     background-origin: border-box;
     background-clip: content-box, border-box;
 }
@@ -131,17 +134,32 @@ figure {
 .middle {
     width: 1300px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 
 .middle .plus {
     display: block;
-    margin: 0 0 10px auto;
+    /* margin: 0 0 10px auto; */
+    margin: 0 0 10px 0;
+}
+
+.middle .home {
+    display: block;
+    border: 1px solid #000;
+    background: #eee;
+    border-radius: 1px;
+    padding: 5px 20px 6px 20px;
+    font-size: 15px;
+    margin: 0 5px 10px 0;
 }
 
 .bottom {
     width: 1300px;
     margin: 30px auto 0 auto;
+
 }
 
 .card_area {
@@ -156,20 +174,20 @@ figure {
     height: 302.5px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
-    object-fit:cover;
+    object-fit: cover;
 }
 
 .card_txt {
-    display: block;
+    display: none;
     width: 302.5px;
     height: 302.5px;
 
 }
 
 a {
-    text-decoration: none; 
-    outline: none; 
-    color:#333;
+    text-decoration: none;
+    outline: none;
+    color: #333;
 }
 
 .card_txt a {

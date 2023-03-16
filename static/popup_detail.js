@@ -78,7 +78,7 @@ function get_card_detail() {
             } else if (member_num == 5) {
                 $(this).attr('src', 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbnvS0F%2Fbtr4gUCte4n%2FeWK2lvJ86MBWtPOvC2rDr0%2Fimg.jpg');
             } else {
-                $(this).attr('src', 'https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd75218a2-7337-440f-ae42-1f90f0528839%2FIMG_2595.jpg?table=block&id=320f0f37-ce86-423c-8644-9491ad532a5e&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=&cache=v2');
+                $(this).attr('src', 'https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F64cb065d-3b48-4750-847d-a44bf3cd2bff%2Fd_j5cUd018svcxtthjcvtne45_3ikh96.jpg?table=block&id=65847553-0c77-46a3-9398-e291c6275960&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=&cache=v2');
             }
         });
     })

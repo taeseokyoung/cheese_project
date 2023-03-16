@@ -17,7 +17,7 @@ $(document).ready(function () {
         $('#popupd').fadeOut(300);
     })
 
-    
+
     $('.open_popupp').click(function () {
         $('#popupp_iframe').attr('src', "/popupp?member_num=" + member_num + "&object_id=0");
         $('html, body').css({
@@ -35,29 +35,34 @@ $(document).ready(function () {
 })
 //bgm//
 $(document).ready(function() {
-    var audioPlayer = document.getElementById("audio-player");
-    var playPauseButton = document.getElementById("play-pause-button");
-    var isPlaying = false;
-  
-    playPauseButton.addEventListener("click", function() {
-      if (isPlaying) {
-        audioPlayer.pause();
-        playPauseButton.textContent = "음악 on ♫";
-        isPlaying = false;
+    var bgm = document.getElementById("bgm");
+    var playPauseButton = $("#play-pause-button");
+    
+    playPauseButton.on("click", function() {
+      if (bgm.paused) {
+        bgm.play();
+        playPauseButton.html("bgm off ♪");
       } else {
-        audioPlayer.play();
-        playPauseButton.textContent = "음악 off ♪";
-        isPlaying = true;
+        bgm.pause();
+        playPauseButton.html("bgm on ♫");
       }
     });
-  });
+});
 //
 
-function hide_close_btn() {
+function hide_popupd_close_btn() {
+    $('#close_popupd').hide()
+}
+
+function show_popupd_close_btn() {
+    $('#close_popupd').show()
+}
+
+function hide_popupp_close_btn() {
     $('#close_popupp').hide()
 }
 
-function show_close_btn() {
+function show_popupp_close_btn() {
     $('#close_popupp').show()
 }
 
@@ -65,8 +70,9 @@ function re_load() {
     window.location.reload();
 }
 
+
 function get_card() {
-   $('#card_area').empty()
+    $('#card_area').empty()
     fetch(`/card?num=${member_num}`).then((res) => res.json()).then((data) => {
         let rows = data['card_list']
         rows.forEach((a, index) => {
@@ -76,7 +82,7 @@ function get_card() {
             let object_id = a['_id']
 
             let temp_html = `<div id="card_img${index}" class="card_img open_card" name="${object_id}">
-                                <a href="">
+                                <a href="#">
                                     <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
                                         src="${card_img}" alt=""
                                         onerror="document.getElementById('card_img${index}').style.display='none';
@@ -84,7 +90,7 @@ function get_card() {
                                 </a>
                              </div>
                              <div id="card_txt${index}" class="card_txt open_card" name="${object_id}">
-                                 <a href="">
+                                 <a href="#">
                                      <h3>${card_title}</h3>
                                      <p>${card_text}</p>
                                  </a>
