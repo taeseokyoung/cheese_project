@@ -94,7 +94,7 @@ function get_card() {
                 let object_id = a['_id'];
                 let temp_html = `<div id="card_img${index}" class="card_img open_card" name="${object_id}">
                               <a href="#">
-                                  <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                                  <img style="width: 300px; height: 300px; object-fit:cover; border-radius: 5px;"
                                       src="${card_img}" alt=""
                                       onerror="document.getElementById('card_img${index}').style.display='none';
                                                document.getElementById('card_txt${index}').style.display='block';">
@@ -110,3 +110,18 @@ function get_card() {
             });
         });
 }
+
+$(document).ready(function () {
+    var bgm = document.getElementById("bgm");
+    var playPauseButton = $("#play-pause-button");
+
+    playPauseButton.on("click", function () {
+        if (bgm.paused) {
+            bgm.play();
+            playPauseButton.html("bgm off ♪");
+        } else {
+            bgm.pause();
+            playPauseButton.html("bgm on ♫");
+        }
+    });
+});

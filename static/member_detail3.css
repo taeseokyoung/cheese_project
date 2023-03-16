@@ -134,17 +134,32 @@ figure {
 .middle {
     width: 1300px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 
 .middle .plus {
     display: block;
-    margin: 0 0 10px auto;
+    /* margin: 0 0 10px auto; */
+    margin: 0 0 10px 0;
+}
+
+.middle .home {
+    display: block;
+    border: 1px solid #000;
+    background: #eee;
+    border-radius: 1px;
+    padding: 5px 20px 6px 20px;
+    font-size: 15px;
+    margin: 0 5px 10px 0;
 }
 
 .bottom {
     width: 1300px;
     margin: 30px auto 0 auto;
+
 }
 
 .card_area {
