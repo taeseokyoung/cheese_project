@@ -51,6 +51,7 @@ function member_name() {
         $('#profile_img').attr('src', '/static/planet_05.png')
     } else {
         $('#name').text('양기철 매니저')
+        $('#profile_img').attr('src', '/static/planet_06.png')
     }
 }
 
