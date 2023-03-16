@@ -1,8 +1,6 @@
-
 $(document).ready(function () {
     get_card();
 
-    // popup_detail.html 팝업창을 띄우는 부분 (카드 상세보기 띄우기)
     $('#card_area').on('click', '.open_card', function () {
         let object_id = $(this).attr('name')
         $('#popupd_iframe').attr('src', "/popupd?member_num=" + member_num + "&object_id=" + object_id);
@@ -12,7 +10,6 @@ $(document).ready(function () {
         $('#popupd').fadeIn(300);
     })
 
-    // popup_detail.html 팝업창을 닫는 부분 (카드 상세보기 닫기)
     $('#close_popupd').click(function () {
         $('html, body').css({
             'overflow': 'auto'
@@ -20,7 +17,7 @@ $(document).ready(function () {
         $('#popupd').fadeOut(300);
     })
 
-    // popup_password.html 팝업창을 띄우는 부분 (비밀번호 확인창 띄우기)
+    
     $('.open_popupp').click(function () {
         $('#popupp_iframe').attr('src', "/popupp?member_num=" + member_num + "&object_id=0");
         $('html, body').css({
@@ -29,7 +26,6 @@ $(document).ready(function () {
         $('#popupp').fadeIn(300);
     })
 
-    // popup_password.html 팝업창을 닫는 부분 (비밀번호 확인창 닫기)
     $('#close_popupp').click(function () {
         $('html, body').css({
             'overflow': 'auto'
@@ -38,19 +34,11 @@ $(document).ready(function () {
     })
 })
 
-function hide_popupd_close_btn() {
-    $('#close_popupd').hide()
-}
-
-function show_popupd_close_btn() {
-    $('#close_popupd').show()
-}
-
-function hide_popupp_close_btn() {
+function hide_close_btn() {
     $('#close_popupp').hide()
 }
 
-function show_popupp_close_btn() {
+function show_close_btn() {
     $('#close_popupp').show()
 }
 
@@ -58,11 +46,8 @@ function re_load() {
     window.location.reload();
 }
 
-// 멤버페이지에서 DB에 저장된 카드 목록을 불러오는 함수
-// $(document).ready(function() {} 안에 넣어야 페이지가 로드됐을때 실행됨
 function get_card() {
-    $('#card_area').empty()
-
+   $('#card_area').empty()
     fetch(`/card?num=${member_num}`).then((res) => res.json()).then((data) => {
         let rows = data['card_list']
         rows.forEach((a, index) => {

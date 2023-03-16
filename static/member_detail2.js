@@ -1,20 +1,28 @@
-const button = document.getElementById('mybgm');
-const iframe = document.getElementById('myif');
-button.addEventListener('click', () => {
-  iframe.src = 'https://www.youtube.com/embed/74_yqNBhQbA?start=3';
-  iframe.contentWindow.postMessage(
-    '{"event":"command","func":"playVideo","args":""}',
-    '*'
-  );
-});
+// const button = document.getElementById('mybgm');
+// const iframe = document.getElementById('myif');
+// button.addEventListener('click', () => {
+//   iframe.src = 'https://www.youtube.com/embed/74_yqNBhQbA?start=3';
+//   iframe.contentWindow.postMessage(
+//     '{"event":"command","func":"playVideo","args":""}',
+//     '*'
+//   );
+// });
 
 $(document).ready(function () {
   get_card();
 
+  $(function () {
+    $('#openp').on('click', function () {
+      $('#popupp').fadeIn(300);
+    });
+  });
   // popup_detail.html 팝업창을 띄우는 부분 (카드 상세보기 띄우기)
   $('#card_area').on('click', '.open_card', function () {
-    let object_id = this.id;
-    $('#popupd_iframe').attr('src', '/popupd/' + member_num + '/' + object_id);
+    let object_id = $(this).attr('name');
+    $('#popupd_iframe').attr(
+      'src',
+      '/popupd?member_num=' + member_num + '&object_id=' + object_id
+    );
     $('html, body').css({
       overflow: 'hidden',
     });
@@ -30,8 +38,11 @@ $(document).ready(function () {
   });
 
   // popup_password.html 팝업창을 띄우는 부분 (비밀번호 확인창 띄우기)
-  $('.open_popupp').click(function () {
-    $('#popupp_iframe').attr('src', '/popupp/' + member_num + '/0');
+  $('.openp').click(function () {
+    $('#popupp_iframe').attr(
+      'src',
+      '/popupp?member_num=' + member_num + '&object_id=0'
+    );
     $('html, body').css({
       overflow: 'hidden',
     });
@@ -78,7 +89,7 @@ function get_card() {
                                           src="${card_img}" alt="">
                                   </a>
                               </div>
-                              <div id="${object_id}" class="card_txt open_card">
+                              <div id="${a[object_id]}" class="card_txt open_card">
                                   <a href="#">
                                       <h3>${card_title}</h3>
                                       <p>${card_text}</p>

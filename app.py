@@ -31,21 +31,28 @@ def detail_page(member_num):
     elif member_num == 5:
         return render_template('member_detail5.html', member_num_give=member_num)
     else:
-        return render_template('member_detail6.html', member_num_give=member_num)
+        return render_template('member_detail6.html', member_num_give=6)
 
 
-@app.route('/popupd/<int:member_num>/<string:object_id>')
-def popup_detail(member_num, object_id):
+@app.route('/popupd')
+def popup_detail():
+    member_num = request.args.get('member_num')
+    object_id = request.args.get('object_id')
+
     return render_template('popup_detail.html', member_num_give=member_num, object_id_give=object_id)
 
 
-@app.route('/popupe/<int:member_num>/<string:object_id>')
-def popup_edit(member_num, object_id):
+@app.route('/popupe')
+def popup_edit():
+    member_num = request.args.get('member_num')
+    object_id = request.args.get('object_id')
     return render_template('popup_edit.html', member_num_give=member_num, object_id_give=object_id)
 
 
-@app.route('/popupp/<int:member_num>/<string:object_id>')
-def popup_password(member_num, object_id):
+@app.route('/popupp')
+def popup_password():
+    member_num = request.args.get('member_num')
+    object_id = request.args.get('object_id')
     return render_template('popup_password.html', member_num_give=member_num, object_id_give=object_id)
 
 
@@ -82,7 +89,7 @@ def add_card():
     card_img_receive = request.form['card_img_give']
 
     time_zone = pytz.timezone('Asia/Seoul')
-    current_time = datetime.now(time_zone).strftime("%y-%m-%d %H:%M")
+    current_time = datetime.now(time_zone).strftime("%Y-%m-%d %H:%M")
 
     doc = {
         'card_title': card_title_receive,
@@ -143,8 +150,10 @@ def check_password(member_num):
     #     return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'check': '0'})
 
 
-@app.route("/detail/<int:member_num>/<string:object_id>", methods=["GET"])
-def get_card_detail(member_num, object_id):
+@app.route("/detail/<int:member_num>", methods=["GET"])
+def get_card_detail(member_num):
+    object_id = request.args.get('object_id')
+
     if member_num == 1:
         temp_card = db.member_1.find_one({'_id': ObjectId(object_id)})
     elif member_num == 2:
