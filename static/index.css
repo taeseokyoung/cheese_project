@@ -101,8 +101,8 @@
 }
 
 .planet_img_04 {
-    width: 550px;
-    height: 550px;
+    width: 450px;
+    height: 450px;
     background-image: url(../static/planet-ntg.png);
     background-position: center;
     background-size: cover;
