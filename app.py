@@ -89,7 +89,7 @@ def add_card():
     card_img_receive = request.form['card_img_give']
 
     time_zone = pytz.timezone('Asia/Seoul')
-    current_time = datetime.now(time_zone).strftime("%y-%m-%d %H:%M")
+    current_time = datetime.now(time_zone).strftime("%Y-%m-%d %H:%M")
 
     doc = {
         'card_title': card_title_receive,
