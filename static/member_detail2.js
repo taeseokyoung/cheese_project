@@ -87,7 +87,7 @@ function get_card() {
                               </a>
                            </div>
                            <div id="card_txt${index}" class="card_txt open_card" name="${object_id}">
-                               <a href="#">
+                               <a href="">
                                    <h3>${card_title}</h3>
                                    <p>${card_text}</p>
                                </a>
