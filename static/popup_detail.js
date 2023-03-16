@@ -55,7 +55,6 @@ function member_name() {
 }
 
 function get_card_detail() {
-
     fetch(`/detail/${member_num}?object_id=${object_id}`).then((res) => res.json()).then((data) => {
         let rows = data['card']
         let card_title = rows['card_title']

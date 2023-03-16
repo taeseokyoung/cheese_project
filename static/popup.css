@@ -327,6 +327,7 @@
             cursor: pointer;
         }
 
-        .popup_modify .bottom_button .d_pw {
-            display: block;
+        .delete_password_box {
+            margin-top: 10px;
+            display: none;
         }
