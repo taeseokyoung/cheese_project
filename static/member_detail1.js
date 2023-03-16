@@ -82,7 +82,7 @@ function get_card() {
             let object_id = a['_id']
 
             let temp_html = `<div id="card_img${index}" class="card_img open_card" name="${object_id}">
-                                <a href="">
+                                <a href="#">
                                     <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
                                         src="${card_img}" alt=""
                                         onerror="document.getElementById('card_img${index}').style.display='none';
@@ -90,7 +90,7 @@ function get_card() {
                                 </a>
                              </div>
                              <div id="card_txt${index}" class="card_txt open_card" name="${object_id}">
-                                 <a href="">
+                                 <a href="#">
                                      <h3>${card_title}</h3>
                                      <p>${card_text}</p>
                                  </a>
