@@ -76,4 +76,5 @@ function edit_card_detail_set() {
         $('#time').text(time)
         $('#image_url').attr('src', card_img)
     }
-
+    )
+}
