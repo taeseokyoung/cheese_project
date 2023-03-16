@@ -34,18 +34,24 @@ def detail_page(member_num):
         return render_template('member_detail6.html', member_num_give=member_num)
 
 
-@app.route('/popupd/<int:member_num>/<string:object_id>')
-def popup_detail(member_num, object_id):
+@app.route('/popupd')
+def popup_detail():
+    member_num = request.args.get('member_num')
+    object_id = request.args.get('object_id')
     return render_template('popup_detail.html', member_num_give=member_num, object_id_give=object_id)
 
 
-@app.route('/popupe/<int:member_num>/<string:object_id>')
-def popup_edit(member_num, object_id):
+@app.route('/popupe')
+def popup_edit():
+    member_num = request.args.get('member_num')
+    object_id = request.args.get('object_id')
     return render_template('popup_edit.html', member_num_give=member_num, object_id_give=object_id)
 
 
-@app.route('/popupp/<int:member_num>/<string:object_id>')
-def popup_password(member_num, object_id):
+@app.route('/popupp')
+def popup_password():
+    member_num = request.args.get('member_num')
+    object_id = request.args.get('object_id')
     return render_template('popup_password.html', member_num_give=member_num, object_id_give=object_id)
 
 
