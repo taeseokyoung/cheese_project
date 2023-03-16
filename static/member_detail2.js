@@ -1,20 +1,25 @@
-const button = document.getElementById('mybgm');
-const iframe = document.getElementById('myif');
-button.addEventListener('click', () => {
-  iframe.src = 'https://www.youtube.com/embed/74_yqNBhQbA?start=3';
-  iframe.contentWindow.postMessage(
-    '{"event":"command","func":"playVideo","args":""}',
-    '*'
-  );
-});
+// const button = document.getElementById('mybgm');
+// const iframe = document.getElementById('myif');
+// button.addEventListener('click', () => {
+//   iframe.src = 'https://www.youtube.com/embed/74_yqNBhQbA?start=3';
+//   iframe.contentWindow.postMessage(
+//     '{"event":"command","func":"playVideo","args":""}',
+//     '*'
+//   );
+// });
 
 $(document).ready(function () {
   get_card();
 
+  $(function () {
+    $('#openp').on('click', function () {
+      console.log('hello');
+    });
+  });
   // popup_detail.html 팝업창을 띄우는 부분 (카드 상세보기 띄우기)
   $('#card_area').on('click', '.open_card', function () {
     let object_id = this.id;
-    $('#popupd_iframe').attr('src', '/popupd/' + member_num + '/' + object_id);
+    $('#popupd_iframe').attr('src', '/popupd/' + 2 + '/' + object_id);
     $('html, body').css({
       overflow: 'hidden',
     });
@@ -30,8 +35,8 @@ $(document).ready(function () {
   });
 
   // popup_password.html 팝업창을 띄우는 부분 (비밀번호 확인창 띄우기)
-  $('.open_popupp').click(function () {
-    $('#popupp_iframe').attr('src', '/popupp/' + member_num + '/0');
+  $('#openp').click(function () {
+    $('#popupp_iframe').attr('src', '/popupp/' + 2 + '/0');
     $('html, body').css({
       overflow: 'hidden',
     });
@@ -62,7 +67,7 @@ function re_load() {
 function get_card() {
   $('#card_area').empty();
 
-  fetch(`/card?num=${member_num}`)
+  fetch(`/card?num=${2}`)
     .then((res) => res.json())
     .then((data) => {
       let rows = data['card_list'];
