@@ -56,29 +56,29 @@ def popup_password():
     return render_template('popup_password.html', member_num_give=member_num, object_id_give=object_id)
 
 
-@app.route("/visitor", methods=["POST"])
-def add_guest_book():
-    visitor_receive = request.form['visitor_give']
-    guest_book_receive = request.form['guest_book_give']
+# @app.route("/visitor", methods=["POST"])
+# def add_guest_book():
+#     visitor_receive = request.form['visitor_give']
+#     guest_book_receive = request.form['guest_book_give']
 
-    time_zone = pytz.timezone('Asia/Seoul')
-    current_time = datetime.now(time_zone).strftime("%m-%d %H:%M")
+#     time_zone = pytz.timezone('Asia/Seoul')
+#     current_time = datetime.now(time_zone).strftime("%m-%d %H:%M")
 
-    doc = {
-        'visitor': visitor_receive,
-        'guest_book': guest_book_receive,
-        'visit_time': current_time
-    }
-    db.visitor.insert_one(doc)
+#     doc = {
+#         'visitor': visitor_receive,
+#         'guest_book': guest_book_receive,
+#         'visit_time': current_time
+#     }
+#     db.visitor.insert_one(doc)
 
-    return jsonify({'msg': '작성 완료'})
+#     return jsonify({'msg': '작성 완료'})
 
 
-@app.route("/visitor", methods=["GET"])
-def get_guest_book():
-    guest_book_list = list(db.visitor.find({}, {'_id': False}))
+# @app.route("/visitor", methods=["GET"])
+# def get_guest_book():
+#     guest_book_list = list(db.visitor.find({}, {'_id': False}))
 
-    return jsonify({'guest_book_list': guest_book_list})
+#     return jsonify({'guest_book_list': guest_book_list})
 
 
 @app.route("/card", methods=["POST"])
@@ -142,12 +142,12 @@ def get_card():
 
 @app.route("/detail/<int:member_num>", methods=["POST"])
 def check_password(member_num):
-    # password_receive = request.form['password_give']
+    password_receive = request.form['password_give']
 
-    # if password_receive == db.password.find_one({'member_num': member_num})['password']:
-    return jsonify({'check': '1'})
-    # else:
-    #     return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'check': '0'})
+    if password_receive == db.password.find_one({'member_num': str(member_num)})['password']:
+        return jsonify({'check': '1'})
+    else:
+        return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'check': '0'})
 
 
 @app.route("/detail/<int:member_num>", methods=["GET"])
@@ -207,13 +207,9 @@ def edit_card_detail(member_num):
 @app.route("/detail/<int:member_num>", methods=["DELETE"])
 def delete_card_detail(member_num):
     object_id = request.args.get('object_id')
-
     password_receive = request.form['password_give']
 
-    if password_receive == db.password.find_one({'member_num': member_num})['password']:
-
-        db.member_1.delete_one({'_id': ObjectId(object_id)})
-
+    if password_receive == db.password.find_one({'member_num': str(member_num)})['password']:
         if member_num == 1:
             db.member_1.delete_one({'_id': ObjectId(object_id)})
         elif member_num == 2:

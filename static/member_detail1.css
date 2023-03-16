@@ -254,6 +254,7 @@ input {
     background-color: rgba(0,0,0,0);
     color: white;
     padding: 5px;
+
 }
 .open_popupp {
     background-color: black;
@@ -263,7 +264,9 @@ input {
     font-size: 20px;
 
 }
+
 #video {
     display: none;
+
 }
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600;700&family=Nanum+Gothic&display=swap');

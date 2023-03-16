@@ -15,10 +15,9 @@
     let member_num = "{{ member_num_give }}";
 </script>
 
+
+
 <button style="color: white;" class="homebt"><a href="./">HOME</a></button>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"
-    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-<script src="../static/member_detail1.js"></script>
 <body>
     <div class="planet_detail">
         <div class="top">
@@ -41,20 +40,18 @@
                             style="border-radius: 3em; padding: 0.6em 1em; background: #F9F9F9; box-shadow: 1px 2px 10px rgba(0,0,0,0.2);  margin-left: 1px;">개발자
                             지망생의 다소 민망한 개발일지.. https://velog.io/@wogns0808</span>
                     </a>
+                    <a href="" class="open_popupp">+</a>
                 </div>
             </div>
 
             <div class="box03">
                 <div class="bgm">
-                    <button id="play-pause-button" class="btn">bgm on ♫</button>
+                    <button type="button" id="play-pause-button" class="btn">음악 on ♫</button>
                   </div>
-                  <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/32jqtF729_g?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
                   
-                    
-                     
-
-                    <a href="#" class="open_popupp">+</a>
+                  <audio id="audio-player">
+                    <source src="../static/maple.mp3" type="audio/mpeg">
+                                   
                 </div>
             </div>
         </div>
@@ -63,25 +60,25 @@
 
             <div id="card_area" class="card_area">
                 <div class="card_img" name="a">
-                    <a href="#">
+                    <a href="">
                         <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
                             src="../static/_126241775_getty_cats.jpeg" alt="">
                     </a>
                 </div>
                 <div class="card_txt" name="a">
-                    <a href="#">
+                    <a href="">
                         <h3>카드 제목입니다.</h3>
                         <p>카드 내용입니다.</p>
                     </a>
                 </div>
                 <div class="card_img open_card" name="a">
-                    <a href="#">
+                    <a href="">
                         <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
                             src="../static/_126241775_getty_cats.jpeg" alt="">
                     </a>
                 </div>
                 <div class="card_txt open_card" name="a">
-                    <a href="#">
+                    <a href="">
                         <h3>카드 제목입니다.</h3>
                         <p>카드 내용입니다.</p>
                     </a>
@@ -114,7 +111,9 @@
     </div>
 
 </body>
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="../static/member_detail1.js"></script>
 
 
 </html>

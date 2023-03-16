@@ -24,7 +24,8 @@ $(document).ready(function () {
         $('#name').text('이지훈')
         $('#profile_img').attr('src', '/static/planet_05.png')
     } else {
-        $('#name').text('양기철')
+        $('#name').text('양기철 매니저')
+        $('#profile_img').attr('src', '/static/planet_06.png')
     }
 
     $('#preview').on('click', function () {
@@ -42,6 +43,10 @@ $(document).ready(function () {
 
     $('#edit').on('click', function () {
         edit_card_detail()
+    })
+
+    $('#check').on('click', function () {
+        delete_card_detail()
     })
 })
 
@@ -93,5 +98,22 @@ function edit_card_detail() {
         //console.log(data)
         alert(data['msg'])
         window.parent.parent.parent.re_load();
+    });
+}
+
+function delete_card_detail() {
+    event.preventDefault();
+
+    let password = $('#delete_password_input').val()
+
+    let formData = new FormData();
+    formData.append("password_give", password);
+
+    fetch(`/detail/${member_num}?object_id=${object_id}`, { method: "DELETE", body: formData, }).then((res) => res.json()).then((data) => {
+        //console.log(data)
+        alert(data['msg'])
+        if (data['reload'] == '1') {
+            window.parent.parent.parent.re_load();
+        }
     });
 }

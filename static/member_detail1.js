@@ -34,22 +34,21 @@ $(document).ready(function () {
     })
 })
 //bgm//
-$(document).ready(() => {
-    const button = $('#play-pause-button');
-    const video = $('#video');
-
-    button.on('click', () => {
-      if (video[0].paused) {
-        video[0].play();
-        button.text('bgm off ♪');
+$(document).ready(function() {
+    var audioPlayer = document.getElementById("audio-player");
+    var playPauseButton = document.getElementById("play-pause-button");
+    var isPlaying = false;
+  
+    playPauseButton.addEventListener("click", function() {
+      if (isPlaying) {
+        audioPlayer.pause();
+        playPauseButton.textContent = "음악 on ♫";
+        isPlaying = false;
       } else {
-        video[0].pause();
-        button.text('bgm on ♫');
+        audioPlayer.play();
+        playPauseButton.textContent = "음악 off ♪";
+        isPlaying = true;
       }
-    });
-
-    video.on('ended', () => {
-      button.text('bgm on ♫');
     });
   });
 //
@@ -77,7 +76,7 @@ function get_card() {
             let object_id = a['_id']
 
             let temp_html = `<div id="card_img${index}" class="card_img open_card" name="${object_id}">
-                                <a href="#">
+                                <a href="">
                                     <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
                                         src="${card_img}" alt=""
                                         onerror="document.getElementById('card_img${index}').style.display='none';
@@ -85,7 +84,7 @@ function get_card() {
                                 </a>
                              </div>
                              <div id="card_txt${index}" class="card_txt open_card" name="${object_id}">
-                                 <a href="#">
+                                 <a href="">
                                      <h3>${card_title}</h3>
                                      <p>${card_text}</p>
                                  </a>
