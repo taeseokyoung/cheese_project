@@ -35,8 +35,8 @@ $(document).ready(function () {
   });
 
   // popup_password.html 팝업창을 띄우는 부분 (비밀번호 확인창 띄우기)
-  $('#openp').click(function () {
-    $('#popupp_iframe').attr('src', '/popupp/' + 2 + '/0');
+  $('.openp').click(function () {
+    $('#popupp_iframe').attr('src', '/popupp?member_num=' + 2 + '&object_id=0');
     $('html, body').css({
       overflow: 'hidden',
     });
