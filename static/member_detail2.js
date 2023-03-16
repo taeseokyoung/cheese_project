@@ -13,7 +13,7 @@ $(document).ready(function () {
 
   $(function () {
     $('#openp').on('click', function () {
-      console.log('hello');
+      open('popupp');
     });
   });
   // popup_detail.html 팝업창을 띄우는 부분 (카드 상세보기 띄우기)
