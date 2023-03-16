@@ -17,7 +17,7 @@ $(document).ready(function () {
         $('#popupd').fadeOut(300);
     })
 
-    
+
     $('.open_popupp').click(function () {
         $('#popupp_iframe').attr('src', "/popupp?member_num=" + member_num + "&object_id=0");
         $('html, body').css({
@@ -34,30 +34,38 @@ $(document).ready(function () {
     })
 })
 //bgm//
-$(document).ready(function() {
+$(document).ready(function () {
     var audioPlayer = document.getElementById("audio-player");
     var playPauseButton = document.getElementById("play-pause-button");
     var isPlaying = false;
-  
-    playPauseButton.addEventListener("click", function() {
-      if (isPlaying) {
-        audioPlayer.pause();
-        playPauseButton.textContent = "음악 on ♫";
-        isPlaying = false;
-      } else {
-        audioPlayer.play();
-        playPauseButton.textContent = "음악 off ♪";
-        isPlaying = true;
-      }
+
+    playPauseButton.addEventListener("click", function () {
+        if (isPlaying) {
+            audioPlayer.pause();
+            playPauseButton.textContent = "음악 on ♫";
+            isPlaying = false;
+        } else {
+            audioPlayer.play();
+            playPauseButton.textContent = "음악 off ♪";
+            isPlaying = true;
+        }
     });
-  });
+});
 //
 
-function hide_close_btn() {
+function hide_popupd_close_btn() {
+    $('#close_popupd').hide()
+}
+
+function show_popupd_close_btn() {
+    $('#close_popupd').show()
+}
+
+function hide_popupp_close_btn() {
     $('#close_popupp').hide()
 }
 
-function show_close_btn() {
+function show_popupp_close_btn() {
     $('#close_popupp').show()
 }
 
@@ -65,8 +73,9 @@ function re_load() {
     window.location.reload();
 }
 
+
 function get_card() {
-   $('#card_area').empty()
+    $('#card_area').empty()
     fetch(`/card?num=${member_num}`).then((res) => res.json()).then((data) => {
         let rows = data['card_list']
         rows.forEach((a, index) => {

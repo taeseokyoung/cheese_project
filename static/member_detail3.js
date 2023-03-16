@@ -80,6 +80,7 @@ function re_load() {
 
 
 
+
 function get_card() {
     $('#card_area').empty();
     fetch(`/card?num=${member_num}`)
