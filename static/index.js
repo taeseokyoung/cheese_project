@@ -9,7 +9,7 @@ $(document).ready(function () {
         arrows: false,
         autoplay: true,
         autoplaySpeed: 400,
-        centerPadding: '60px',
+        centerPadding: '50px',
         slidesToShow: 3,
         responsive: [
             {
