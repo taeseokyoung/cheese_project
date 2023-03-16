@@ -5,12 +5,11 @@ $(document).ready(function () {
     // popup_detail.html 팝업창을 띄우는 부분 (카드 상세보기 띄우기)
     $('#card_area').on('click', '.open_card', function () {
         let object_id = this.id
-        console.log(member_num, object_id)
-        // $('#popupd_iframe').attr('src', '/popupd/' + member_num + '/' + object_id);
-        // $('html, body').css({
-        //     'overflow': 'hidden'
-        // });
-        // $('#popupd').fadeIn(300);
+        $('#popupd_iframe').attr('src', '/popupd/' + member_num + '/' + object_id);
+        $('html, body').css({
+            'overflow': 'hidden'
+        });
+        $('#popupd').fadeIn(300);
     })
 
     // popup_detail.html 팝업창을 닫는 부분 (카드 상세보기 닫기)
