@@ -47,12 +47,13 @@ function show_content() {
         rows.forEach((a) => {
             let comment = a['comment']
             let name = a['name']
+            let time = a['time']
 
             let temp_html = `
               <div class="guest_card">
                             <p class="guest_comment">${comment}</p>
                             <p class="guest_name">${name}</p>
-                            <p class="guest_time">2023-00-00</p>
+                            <p class="guest_time">${time}</p>
                     </div>`
 
             $('.guest_card_area').append(temp_html)

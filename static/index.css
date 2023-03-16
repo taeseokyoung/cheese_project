@@ -195,6 +195,17 @@
     margin: 0 10px;
 }
 
+.guest_card p.guest_name {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.guest_card p.guest_time {
+    font-size: 13px;
+    font-weight: 300;
+    color: #777;
+}
 
 
 
