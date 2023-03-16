@@ -56,7 +56,7 @@ function show_content() {
                             <p class="guest_time">${time}</p>
                     </div>`
 
-            $('.guest_card_area').append(temp_html)
+            $('.guest_card_area').prepend(temp_html)
         });
     })
 }

@@ -83,21 +83,3 @@ function edit_card_detail_set() {
         $('#image_url').attr('src', card_img)
     })
 }
-
-function edit_card_detail() {
-    let card_title = $('#title_input').val()
-    let card_text = $('#text_input').val()
-    let card_img = $('#img_url_input').val()
-
-    let formData = new FormData();
-    formData.append("card_title_give", card_title);
-    formData.append("card_text_give", card_text);
-    formData.append("card_img_give", card_img);
-
-    fetch(`/detail/${member_num}?object_id=${object_id}`, { method: "PUT", body: formData, }).then((res) => res.json()).then((data) => {
-        //console.log(data)
-        alert(data['msg'])
-        window.parent.parent.re_load();
-    });
-
-}

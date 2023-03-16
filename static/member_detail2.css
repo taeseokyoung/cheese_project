@@ -100,10 +100,6 @@ h2 {
   color: white;
 }
 
-#myif {
-  display: block;
-}
-
 .bottom {
   width: 1300px;
   margin: 0 auto;
@@ -115,7 +111,6 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
   row-gap: 25px;
   column-gap: 28px;
-  background-color: lightcyan;
   margin: 0px;
   padding: 0px;
   border-radius: 200px;
@@ -125,6 +120,14 @@ h2 {
   width: 302.5px;
   height: 302.5px;
   object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+img {
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .card_txt {
@@ -153,4 +156,5 @@ a {
 .planet_detail {
   background-image: url(../static/무지개.jpg);
   background-size: 100%;
+  background-size: cover;
 }
