@@ -9,8 +9,7 @@
     font-family: 'GangwonEdu_OTFBoldA', sans-serif;
 }
 
-body {
-}
+body {}
 
 a {
     text-decoration: none;
@@ -46,14 +45,20 @@ p {
     color: #fff;
 }
 
+.box02 h2 {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
 .mbti {
     margin-top: 5px;
     padding-left: 30px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .blog_url {
     margin-top: 5px;
     margin-bottom: 5px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .blog_url span {
@@ -61,7 +66,7 @@ p {
 }
 
 .blog_url a {
-    color: #fff;
+    color: inherit;
     font-weight: bolder;
     padding-left: 30px;
 }
@@ -70,7 +75,18 @@ p {
     flex: 1;
 }
 
+.audio_box {
+    margin: 20px auto 20px 0;
+    padding-left: 30px;
+}
+
+.play-pause-button {
+    cursor: pointer;
+
+}
+
 .open_popupp {
+    margin: 0 auto;
     color: transparent;
 }
 
@@ -140,6 +156,4 @@ h2 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-#background {
-
-}
+#background {}

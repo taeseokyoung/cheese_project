@@ -2,6 +2,19 @@
 $(document).ready(function () {
     get_card();
 
+    var bgm = document.getElementById("bgm");
+    var playPauseButton = $("#play-pause-button");
+
+    playPauseButton.on("click", function () {
+        if (bgm.paused) {
+            bgm.play();
+            playPauseButton.html("⏸");
+        } else {
+            bgm.pause();
+            playPauseButton.html("🎵");
+        }
+    });
+
     // popup_detail.html 팝업창을 띄우는 부분 (카드 상세보기 띄우기) 3순위
     $('#card_area').on('click', '.open_card', function () {
         let object_id = $(this).attr('name')
