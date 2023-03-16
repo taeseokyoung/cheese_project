@@ -15,35 +15,52 @@
     let member_num = "{{ member_num_give }}";
 </script>
 
-<button style="color: white;" class="homebt"><a href = "./">HOME</a></button>
+<button style="color: white;" class="homebt"><a href="./">HOME</a></button>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="../static/member_detail1.js"></script>
 <body>
     <div class="planet_detail">
-        <div class="top"> 
+        <div class="top">
             <div class="box01">
                 <figure class="planet_detail01"></figure>
             </div>
             <div class="box02">
-                <h2 style="color:white" class="myname"><bold>임재훈</h2>
-                <p style="color:white" class="mbti"><span style="border-bottom: 8px solid #dcf1fb; padding: 0 0 0 0.2em;">ENFP</span></p>
+                <h2 style="color:white" class="myname">
+                    <bold>임재훈
+                </h2>
+                <p style="color:white" class="mbti"><span
+                        style="border-bottom: 8px solid #dcf1fb; padding: 0 0 0 0.2em;">ENFP</span></p>
                 <p style="color:black" class="mbithide">내가생각해도 I 로 시작해야될거같지만</p>
-                <p style="border: 1px dashed #C9C9C9; padding: 0.3em 1em;border-radius: 2px;color:white"  class="des">
-                    29살 아홉수입니다<br>두마리의 주인을 모시고 있는 집사입니다<br> 소심쟁이 순수혈통A형 입니다 <br>비전공자에 스파르타에서 처음 코딩을 접했습니다<br>완전 초보지만 최선을다해 열심히 하도록 하겠습니다 모두 화이팅!
+                <p style="border: 1px dashed #C9C9C9; padding: 0.3em 1em;border-radius: 2px;color:white" class="des">
+                    29살 아홉수입니다<br>두마리의 주인을 모시고 있는 집사입니다<br> 소심쟁이 순수혈통A형 입니다 <br>비전공자에 스파르타에서 처음 코딩을 접했습니다<br>완전 초보지만
+                    최선을다해 열심히 하도록 하겠습니다 모두 화이팅!
                 </p>
                 <div style="color:white" class="blog_url">
-                    <a target="_blank" href="https://velog.io/@wogns0808"> <span style="border-radius: 3em; padding: 0.6em 1em; background: #F9F9F9; box-shadow: 1px 2px 10px rgba(0,0,0,0.2);  margin-left: 1px;">개발자 지망생의 다소 민망한 개발일지.. https://velog.io/@wogns0808</span>
+                    <a target="_blank" href="https://velog.io/@wogns0808"> <span
+                            style="border-radius: 3em; padding: 0.6em 1em; background: #F9F9F9; box-shadow: 1px 2px 10px rgba(0,0,0,0.2);  margin-left: 1px;">개발자
+                            지망생의 다소 민망한 개발일지.. https://velog.io/@wogns0808</span>
                     </a>
                 </div>
             </div>
+
             <div class="box03">
-                <div style="color: white;" class="bgm">
-                    <button class="btn">bgm on ♫</button>
+                <div class="bgm">
+                    <button id="play-pause-button" class="btn">bgm on ♫</button>
+                  </div>
+                  <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/32jqtF729_g?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                  
+                    
+                     
+
                     <a href="#" class="open_popupp">+</a>
                 </div>
             </div>
         </div>
         <hr style="border: solid 1px white;">
         <div class="bottom">
-            
+
             <div id="card_area" class="card_area">
                 <div class="card_img" name="a">
                     <a href="#">
@@ -71,35 +88,33 @@
                 </div>
             </div>
         </div>
-            </div>
-        </div>
-        
+    </div>
     </div>
 
-        <!-- 상세보기 팝업 -->
-        <div class="popup-wrap popupd-wrap" id="popupd">
-            <div class="popup">
-                <div class="popup-body">
-                    <button id="close_popupd" class="close_popup_btn close_popupd_btn">X</button>
-                    <iframe src="#" id="popupd_iframe" class="iframe"></iframe>
-                </div>
+    </div>
+
+    <!-- 상세보기 팝업 -->
+    <div class="popup-wrap popupd-wrap" id="popupd">
+        <div class="popup">
+            <div class="popup-body">
+                <button id="close_popupd" class="close_popup_btn close_popupd_btn">X</button>
+                <iframe src="#" id="popupd_iframe" class="iframe"></iframe>
             </div>
         </div>
-    
-        <!-- 비밀번호 팝업 -->
-        <div class="popup-wrap popupp-wrap" id="popupp">
-            <div class="popup">
-                <div class="popup-body">
-                    <button id="close_popupp" class="close_popup_btn close_popupp_btn">X</button>
-                    <iframe src="#" id="popupp_iframe" class="iframe"></iframe>
-                </div>
+    </div>
+
+    <!-- 비밀번호 팝업 -->
+    <div class="popup-wrap popupp-wrap" id="popupp">
+        <div class="popup">
+            <div class="popup-body">
+                <button id="close_popupp" class="close_popup_btn close_popupp_btn">X</button>
+                <iframe src="#" id="popupp_iframe" class="iframe"></iframe>
             </div>
         </div>
+    </div>
 
 </body>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script src="../static/member_detail1.js"></script>
+
 
 </html>

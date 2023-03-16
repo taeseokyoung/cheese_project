@@ -33,6 +33,26 @@ $(document).ready(function () {
         $('#popupp').fadeOut(300);
     })
 })
+//bgm//
+$(document).ready(() => {
+    const button = $('#play-pause-button');
+    const video = $('#video');
+
+    button.on('click', () => {
+      if (video[0].paused) {
+        video[0].play();
+        button.text('bgm off ♪');
+      } else {
+        video[0].pause();
+        button.text('bgm on ♫');
+      }
+    });
+
+    video.on('ended', () => {
+      button.text('bgm on ♫');
+    });
+  });
+//
 
 function hide_close_btn() {
     $('#close_popupp').hide()
