@@ -8,6 +8,11 @@ body {
     background-image: url('https://t1.daumcdn.net/cfile/tistory/99E4A4385C2BA4EF01?original');
 }
 
+/* body::-webkit-scrollbar {
+    display: none;
+} */
+
+
 a {
     text-decoration: none;
     outline: none;

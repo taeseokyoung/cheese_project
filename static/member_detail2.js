@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     // popup_detail.html 팝업창을 닫는 부분 (카드 상세보기 닫기)
     $('#close_popupd').click(function () {
-        $('html, body').css({
+        $('html').css({
             overflow: 'auto',
         });
         $('#popupd').fadeOut(300);
@@ -40,7 +40,7 @@ $(document).ready(function () {
             'src',
             '/popupp?member_num=' + member_num + '&object_id=0'
         );
-        $('html, body').css({
+        $('html').css({
             overflow: 'hidden',
         });
         $('#popupp').fadeIn(300);
@@ -48,7 +48,7 @@ $(document).ready(function () {
 
     // popup_password.html 팝업창을 닫는 부분 (비밀번호 확인창 닫기)
     $('#close_popupp').click(function () {
-        $('html, body').css({
+        $('html').css({
             overflow: 'auto',
         });
         $('#popupp').fadeOut(300);
@@ -107,21 +107,21 @@ function get_card() {
 }
 //bgm//
 $(document).ready(function () {
-  var audioPlayer = document.getElementById('audio-player');
-  var playPauseButton = document.getElementById('play-pause-button');
-  var isPlaying = false;
+    var audioPlayer = document.getElementById('audio-player');
+    var playPauseButton = document.getElementById('play-pause-button');
+    var isPlaying = false;
 
-  playPauseButton.addEventListener('click', function () {
-    if (isPlaying) {
-      audioPlayer.pause();
-      playPauseButton.textContent = 'bgm on ♫';
-      isPlaying = false;
-    } else {
-      audioPlayer.currentTime = 3;
-      audioPlayer.play();
-      playPauseButton.textContent = 'bgm off 🔇';
-      isPlaying = true;
-    }
-  });
+    playPauseButton.addEventListener('click', function () {
+        if (isPlaying) {
+            audioPlayer.pause();
+            playPauseButton.textContent = 'bgm on ♫';
+            isPlaying = false;
+        } else {
+            audioPlayer.currentTime = 3;
+            audioPlayer.play();
+            playPauseButton.textContent = 'bgm off 🔇';
+            isPlaying = true;
+        }
+    });
 });
 //
