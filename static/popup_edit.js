@@ -63,18 +63,15 @@ function add_card() {
 }
 
 function edit_card_detail_set() {
-
     fetch(`/detail/${member_num}?object_id=${object_id}`).then((res) => res.json()).then((data) => {
         let rows = data['card']
         let card_title = rows['card_title']
         let card_text = rows['card_text']
         let card_img = rows['card_img']
-        let time = rows['time']
 
-        $('#title').text(card_title)
-        $('#text').text(card_text)
-        $('#time').text(time)
+        $('#title_input').val(card_title)
+        $('#text_input').val(card_text)
+        $('#img_url_input').val(card_img)
         $('#image_url').attr('src', card_img)
     }
-    )
-}
+
