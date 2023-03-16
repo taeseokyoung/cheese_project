@@ -24,12 +24,13 @@ $(document).ready(function () {
         $('#name').text('이지훈')
         $('#profile_img').attr('src', '/static/planet_05.png')
     } else {
-        $('#name').text('양기철')
+        $('#name').text('양기철 매니저')
+        $('#profile_img').attr('src', '/static/planet_06.png')
     }
 
     $('#preview').on('click', function () {
         let img_url = $('#img_url_input').val()
-        $('#image_box').attr('src', img_url)
+        $('#image_url').attr('src', img_url)
     })
 
     $('#add').on('click', function () {

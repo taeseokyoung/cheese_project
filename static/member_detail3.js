@@ -80,6 +80,7 @@ function re_load() {
 
 
 
+
 function get_card() {
     $('#card_area').empty();
     fetch(`/card?num=${member_num}`)
@@ -100,7 +101,7 @@ function get_card() {
                               </a>
                            </div>
                            <div id="card_txt${index}" class="card_txt open_card" name="${object_id}">
-                               <a href="">
+                               <a href="#">
                                    <h3>${card_title}</h3>
                                    <p>${card_text}</p>
                                </a>

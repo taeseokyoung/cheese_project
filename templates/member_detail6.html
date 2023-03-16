@@ -5,10 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/member_detail1.css">
+    <link rel="stylesheet" href="../static/member_detail6.css">
     <link rel="stylesheet" href="../static/common.css">
-    <title>기철의 행성</title>
+    <link rel="stylesheet" href="../static/popup.css">
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="../static/member_detail6.js"></script>
 </head>
+
+<script>
+    let member_num = "{{ member_num_give }}";
+</script>
 
 <body>
     <div class="planet_detail">
@@ -18,44 +27,66 @@
             </div>
             <div class="box02">
                 <h2>양기철 매니저</h2>
-                <p class="mbti">INFP</p>
-                <p class="des">설명 입력</p>
+                <span class="mbti">INFP</span>
                 <div class="blog_url">
-                    <a target="_blank" href="https://www.instagram.com/hanmariyang/">www.instagram.com/hanmariyang
-                    </a>
+                    <a target="_blank" href="https://www.instagram.com/hanmariyang/">www.instagram.com/hanmariyang</a>
                 </div>
+                <a href="#" class="open_popupp">@</a>
             </div>
             <div class="box03">
                 <div class="bgm">
-                    <button>bgm on</button>
                 </div>
             </div>
         </div>
+
         <div class="bottom">
-            <button>+</button>
-            <div class="card_area">
-                <div class="card_img">
-                    <img src="" alt="">
+            <div id="card_area" class="card_area">
+                <div class="card_img open_card" name="a">
+                    <a href="#">
+                        <img style="width: 302.5px; height: 302.5px; object-fit:cover;"
+                            src="../static/_126241775_getty_cats.jpeg" alt="">
+                    </a>
                 </div>
-                <div class="card_txt">
-                    <h3>카드 제목입니다.</h3>
-                    <p>카드 내용입니다.</p>
+                <div class="card_txt open_card" name="a">
+                    <a href="#">
+                        <h3>카드 제목입니다.</h3>
+                        <p>카드 내용입니다.</p>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="card_edit">
-            <div class="left">
-                <div class="card_img">
-                    <img src="" alt="">
-                </div>
-            </div>
-            <div class="right">
-                <input type="text">
-                <input type="textarea" maxlength="20">
-                <input type="password" maxlength="4">
-                <button>게시</button>
+    </div>
+
+    <!-- 상세보기 팝업 -->
+    <div class="popup-wrap popupd-wrap" id="popupd">
+        <div class="popup">
+            <div class="popup-body">
+                <button id="close_popupd" class="close_popup_btn close_popupd_btn">X</button>
+                <iframe src="#" id="popupd_iframe" class="iframe"></iframe>
             </div>
         </div>
+    </div>
+
+    <!-- 비밀번호 팝업 -->
+    <div class="popup-wrap popupp-wrap" id="popupp">
+        <div class="popup">
+            <div class="popup-body">
+                <button id="close_popupp" class="close_popup_btn close_popupp_btn">X</button>
+                <iframe src="#" id="popupp_iframe" class="iframe"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- 관리창 팝업 -->
+    <!-- <div class="popup-wrap popupe-wrap" id="popupe">
+        <div class="popup">
+            <div class="popup-body">
+                <button id="close_popupe" class="close_popup_btn close_popupe_btn">X</button>
+                <iframe src="#" id="popupe_iframe" class="iframe"></iframe>
+            </div>
+        </div>
+    </div> -->
+
 </body>
 
 </html>

@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'GangwonEdu_OTFBoldA', sans-serif;
+}
+
+body {
+    background-image: url('https://t1.daumcdn.net/cfile/tistory/99E4A4385C2BA4EF01?original');
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+span,
+p {
+    font-size: 17px;
+}
+
+.top {
+    width: 1300px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.box01 {
+    flex: 1;
+}
+
+.box02 {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+
+    color: #fff;
+}
+
+.mbti {
+    margin-top: 5px;
+    padding-left: 30px;
+}
+
+.blog_url {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.blog_url span {
+    padding-left: 30px;
+}
+
+.blog_url a {
+    color: #fff;
+    font-weight: bolder;
+    padding-left: 30px;
+}
+
+.box03 {
+    flex: 1;
+}
+
+.open_popupp {
+    color: transparent;
+}
+
+.info {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 29px;
+}
+
+.planet_detail01 {
+    width: 300px;
+    height: 300px;
+    background-image: url(https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F79579db1-eabe-4178-a765-ca5844d249b9%2FIMG_3795.jpg?table=block&id=fafe0a8f-5133-4b6c-813b-3e3135580253&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=&cache=v2);
+    background-position: center;
+    background-size: cover;
+}
+
+.planet_detail .bottom>button {
+    display: block;
+    margin: 0 0 0 auto;
+}
+
+.bottom {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.card_area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
+.card_img {
+    /* display: none; */
+    width: 302.5px;
+    height: 302.5px;
+    object-fit: cover;
+}
+
+.card_img a img {
+    border-radius: 20px;
+}
+
+.card_txt {
+    display: none;
+    width: 302.5px;
+    height: 302.5px;
+}
+
+.card_txt a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.card_txt a h3,
+.card_txt a p {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}

@@ -9,7 +9,7 @@ $(document).ready(function () {
         arrows: false,
         autoplay: true,
         autoplaySpeed: 400,
-        centerPadding: '60px',
+        centerPadding: '50px',
         slidesToShow: 3,
         responsive: [
             {
@@ -18,7 +18,7 @@ $(document).ready(function () {
                     arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
-                    slidesToShow: 2
+                    slidesToShow: 3
                 }
             },
             {
@@ -27,7 +27,7 @@ $(document).ready(function () {
                     arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
-                    slidesToShow: 1
+                    slidesToShow: 2
                 }
             }
         ]

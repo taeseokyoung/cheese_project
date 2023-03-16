@@ -53,19 +53,24 @@
     width: auto;
     margin: 0 auto;
 }
- .carousel-container .slick-next {
+
+.carousel-container .slick-next {
     right: calc((100vw - 630px)/2)
-  }
+}
 
-  .carousel-container .slick-prev {
+.carousel-container .slick-prev {
     left: calc((100vw - 630px)/2)
-  }
+}
 
-.planet01, .planet02,.planet03,.planet04,.planet05 {
+.planet01,
+.planet02,
+.planet03,
+.planet04,
+.planet05 {
     width: 100%;
     height: auto;
     padding: 0 100px;
-} 
+}
 
 .inner figure {
     margin-bottom: 10px;
@@ -77,40 +82,40 @@
 }
 
 .planet_img_01 {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
     background-image: url(../static/planet-imjh.png);
     background-position: center;
     background-size: cover;
 }
 
 .planet_img_02 {
-    width: 450px;
-    height: 450px;
+    width: 380px;
+    height: 380px;
     background-image: url(../static/planet-kmh.png);
     background-position: center;
     background-size: cover;
 }
 
 .planet_img_03 {
-    width: 450px;
-    height: 450px;
+    width: 380px;
+    height: 380px;
     background-image: url(../static/planet-tsk.png);
     background-position: center;
     background-size: cover;
 }
 
 .planet_img_04 {
-    width: 550px;
-    height: 550px;
+    width: 380px;
+    height: 380px;
     background-image: url(../static/planet-ntg.png);
     background-position: center;
     background-size: cover;
 }
 
 .planet_img_05 {
-    width: 450px;
-    height: 450px;
+    width: 380px;
+    height: 380px;
     background-image: url(../static/planet-ijh.png);
     background-position: center;
     background-size: cover;
@@ -121,7 +126,7 @@
 .guest_title {
     text-align: center;
     color: #fff;
-    margin: 0 0 30px ;
+    margin: 0 0 30px;
 }
 
 .guest_book {
@@ -130,11 +135,14 @@
     margin: 0 auto;
     padding: 30px;
     overflow: scroll;
-    background-color: rgb(255, 255, 255,0.1);
+    background-color: rgb(255, 255, 255, 0.1);
     border-radius: 3px;
 }
+
 .guest_book .guest_write {
-    margin: 0 0 30px 0;}
+    margin: 0 0 30px 0;
+}
+
 /* 
 .guest_card_area{
     display: grid;
@@ -170,11 +178,12 @@
 
 .guest_book .guest_write .guest_name,
 .guest_card .guest_name {
-     flex: 0.7;
+    flex: 0.7;
 }
+
 .guest_book .guest_write .guest_submit,
 .guest_card .guest_submit {
-     flex: 0.3;
+    flex: 0.3;
 }
 
 .guest_book .guest_write .time {
@@ -210,7 +219,7 @@
 /* 반응형 */
 
 
-@media (max-width: 1400px){
+@media (max-width: 1400px) {
     .inner figure {
         width: 300px;
         height: 300px;
@@ -218,7 +227,7 @@
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .inner figure {
         width: 150px;
         height: 150px;
