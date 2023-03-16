@@ -91,13 +91,10 @@ h2 {
   margin: 0 0 0 auto;
 }
 
-.bgm {
-  border: 0;
-  margin: 0;
-  height: 30px;
-  width: 140px;
-  font-size: 30px;
-  color: white;
+.btn {
+  background-color: aquamarine;
+  border-color: white;
+  color: red;
 }
 
 .bottom {
