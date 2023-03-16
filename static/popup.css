@@ -112,6 +112,12 @@
             height: 400px;
         }
 
+        .popup_contents .left .photo .image_box {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+        }
+
         .popup_contents .right {
             max-width: 100%;
             margin: 15px 20px;
@@ -266,7 +272,7 @@
         .popup_modify .popup_contents .left .photo .image_box {
             width: 400px;
             height: 400px;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         .popup_modify .popup_contents .right {

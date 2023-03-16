@@ -5,6 +5,7 @@ $(document).ready(function () {
         $('#edit').hide()
     } else {
         $('#add').hide()
+        edit_card_detail_set()
     }
 
     if (member_num == 1) {
@@ -73,5 +74,5 @@ function edit_card_detail_set() {
         $('#text_input').val(card_text)
         $('#img_url_input').val(card_img)
         $('#image_url').attr('src', card_img)
-    })
-}
+    }
+
