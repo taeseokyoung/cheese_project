@@ -9,6 +9,7 @@ $(document).ready(function () {
             'overflow': 'hidden'
         });
         $('#popupp').fadeIn(300);
+        window.parent.hide_popupd_close_btn();
     })
 
     $('#close_popupp').click(function () {
@@ -16,8 +17,17 @@ $(document).ready(function () {
             'overflow': 'auto'
         });
         $('#popupp').fadeOut(300);
+        window.parent.show_popupd_close_btn()
     })
 })
+
+function hide_popupp_close_btn() {
+    $('#close_popupp').hide()
+}
+
+function show_popupp_close_btn() {
+    $('#close_popupp').show()
+}
 
 function re_load() {
     window.location.reload();
