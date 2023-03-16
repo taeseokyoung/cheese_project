@@ -38,6 +38,7 @@ def detail_page(member_num):
 def popup_detail():
     member_num = request.args.get('member_num')
     object_id = request.args.get('object_id')
+
     return render_template('popup_detail.html', member_num_give=member_num, object_id_give=object_id)
 
 
@@ -149,8 +150,10 @@ def check_password(member_num):
     #     return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'check': '0'})
 
 
-@app.route("/detail/<int:member_num>/<string:object_id>", methods=["GET"])
-def get_card_detail(member_num, object_id):
+@app.route("/detail/<int:member_num>", methods=["GET"])
+def get_card_detail(member_num):
+    object_id = request.args.get('object_id')
+
     if member_num == 1:
         temp_card = db.member_1.find_one({'_id': ObjectId(object_id)})
     elif member_num == 2:
