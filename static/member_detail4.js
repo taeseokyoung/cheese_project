@@ -50,6 +50,8 @@ function re_load() {
     window.location.reload();
 }
 
+// 멤버페이지에서 DB에 저장된 카드 목록을 불러오는 함수
+// $(document).ready(function() {} 안에 넣어야 페이지가 로드됐을때 실행됨
 function get_card() {
     $('#card_area').empty()
 
