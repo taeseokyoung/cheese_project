@@ -5,6 +5,7 @@ $(document).ready(function () {
         $('#edit').hide()
     } else {
         $('#add').hide()
+        edit_card_detail_set()
     }
 
     if (member_num == 1) {

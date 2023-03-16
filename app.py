@@ -236,44 +236,32 @@ def delete_card_detail(member_num, object_id):
         return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'reload': '0'})
 
 
-
-
-
 # 230316 서경이 방명록
 
 
 @app.route("/guest", methods=["POST"])
-
 def guest_post():
     comment_receive = request.form['comment_give']
     name_receive = request.form['name_give']
-    time =  datetime.now(pytz.timezone('Asia/Seoul')).strftime("%Y-%m-%d %H:%M:%S")
-    
-    # ("%Y-%m-%d %H:%M:%S %Z%z")   
+    time = datetime.now(pytz.timezone('Asia/Seoul')
+                        ).strftime("%Y-%m-%d %H:%M:%S")
+
+    # ("%Y-%m-%d %H:%M:%S %Z%z")
     doc = {
-        'comment':comment_receive,
-        'name':name_receive,
-        'time':time
+        'comment': comment_receive,
+        'name': name_receive,
+        'time': time
     }
     db.guestbook.insert_one(doc)
 
-    return jsonify({'msg':'저장 완료!'})
+    return jsonify({'msg': '저장 완료!'})
+
 
 @app.route("/guest", methods=["GET"])
 def guest_get():
-    guestbook_data = list(db.guestbook.find({},{'_id':False}))
+    guestbook_data = list(db.guestbook.find({}, {'_id': False}))
     return jsonify({'result': guestbook_data})
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
-
