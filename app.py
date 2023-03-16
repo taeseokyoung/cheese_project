@@ -239,13 +239,17 @@ def delete_card_detail(member_num, object_id):
 
 
 @app.route("/guest", methods=["POST"])
+
 def guest_post():
     comment_receive = request.form['comment_give']
     name_receive = request.form['name_give']
-
+    time =  datetime.now(pytz.timezone('Asia/Seoul')).strftime("%Y-%m-%d %H:%M:%S")
+    
+    # ("%Y-%m-%d %H:%M:%S %Z%z")   
     doc = {
         'comment':comment_receive,
-        'name':name_receive
+        'name':name_receive,
+        'time':time
     }
     db.guestbook.insert_one(doc)
 
