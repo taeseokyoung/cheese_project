@@ -102,3 +102,18 @@ function get_card() {
         })
     })
 }
+
+$(document).ready(function () {
+    var bgm = document.getElementById("bgm");
+    var playPauseButton = $("#play-pause-button");
+
+    playPauseButton.on("click", function () {
+        if (bgm.paused) {
+            bgm.play();
+            playPauseButton.html("bgm off ♪");
+        } else {
+            bgm.pause();
+            playPauseButton.html("bgm on ♫");
+        }
+    });
+});
