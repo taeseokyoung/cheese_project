@@ -108,13 +108,13 @@
     background-size: cover;
 }
 
+/* 20230316 방명록 추가중 */
+
 .guest_title {
     text-align: center;
     color: #fff;
     margin: 0 0 30px ;
 }
-
-
 
 .guest_book {
     width: 1000px;
