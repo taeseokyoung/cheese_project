@@ -31,7 +31,7 @@ def detail_page(member_num):
     elif member_num == 5:
         return render_template('member_detail5.html', member_num_give=member_num)
     else:
-        return render_template('member_detail6.html', member_num_give=member_num)
+        return render_template('member_detail6.html', member_num_give=6)
 
 
 @app.route('/popupd')
