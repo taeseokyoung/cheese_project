@@ -46,17 +46,39 @@ $(document).ready(function () {
     });
 });
 
-function hide_close_btn() {
-    $('#close_popupp').hide();
+// function hide_close_btn() {
+//     $('#close_popupp').hide();
+// }
+
+// function show_close_btn() {
+//     $('#close_popupp').show();
+// }
+
+// function re_load() {
+//     window.location.reload();
+// }
+
+function hide_popupd_close_btn() {
+    $('#close_popupd').hide()
 }
 
-function show_close_btn() {
-    $('#close_popupp').show();
+function show_popupd_close_btn() {
+    $('#close_popupd').show()
+}
+
+function hide_popupp_close_btn() {
+    $('#close_popupp').hide()
+}
+
+function show_popupp_close_btn() {
+    $('#close_popupp').show()
 }
 
 function re_load() {
     window.location.reload();
 }
+
+
 
 function get_card() {
     $('#card_area').empty();
