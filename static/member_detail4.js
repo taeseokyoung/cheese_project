@@ -38,11 +38,19 @@ $(document).ready(function () {
     })
 })
 
-function hide_close_btn() {
+function hide_popupd_close_btn() {
+    $('#close_popupd').hide()
+}
+
+function show_popupd_close_btn() {
+    $('#close_popupd').show()
+}
+
+function hide_popupp_close_btn() {
     $('#close_popupp').hide()
 }
 
-function show_close_btn() {
+function show_popupp_close_btn() {
     $('#close_popupp').show()
 }
 

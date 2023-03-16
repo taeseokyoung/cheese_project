@@ -6,12 +6,9 @@ $(document).ready(function () {
 
     $('#close_popupe').on('click', function () {
         $('#popupe').fadeOut(300);
-        window.parent.show_close_btn();
+        window.parent.show_popupp_close_btn();
     })
-
-
 })
-
 
 function check_password() {
     let password = $('#password_input').val()
@@ -24,7 +21,7 @@ function check_password() {
         if (data['check'] == '1') {
             $('#popupe_iframe').attr('src', "/popupe?member_num=" + member_num + "&object_id=" + object_id);
             $('#popupe').fadeIn(300);
-            window.parent.hide_close_btn();
+            window.parent.hide_popupp_close_btn();
         } else {
             alert(data['msg']);
         }
