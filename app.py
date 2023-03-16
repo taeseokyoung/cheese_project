@@ -173,8 +173,10 @@ def get_card_detail(member_num):
     return jsonify({'card': card})
 
 
-@app.route("/detail/<int:member_num>/<string:object_id>", methods=["PUT"])
+@app.route("/detail/<int:member_num>", methods=["PUT"])
 def edit_card_detail(member_num, object_id):
+    object_id = request.args.get('object_id')
+
     card_title_receive = request.form['card_title_give']
     card_text_receive = request.form['card_text_give']
     card_img_receive = request.form['card_img_give']
@@ -206,8 +208,10 @@ def edit_card_detail(member_num, object_id):
         return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'reload': '0'})
 
 
-@app.route("/detail/<int:member_num>/<string:object_id>", methods=["DELETE"])
+@app.route("/detail/<int:member_num>", methods=["DELETE"])
 def delete_card_detail(member_num, object_id):
+    object_id = request.args.get('object_id')
+
     password_receive = request.form['password_give']
 
     if password_receive == db.password.find_one({'member_num': member_num})['password']:
