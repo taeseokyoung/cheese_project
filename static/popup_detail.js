@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     $('#edit').on('click', function () {
         $('#popupp_iframe').attr('src', "/popupp?member_num=" + member_num + "&object_id=" + object_id);
-        $('html, body').css({
+        $('html').css({
             'overflow': 'hidden'
         });
         $('#popupp').fadeIn(300);
@@ -13,7 +13,7 @@ $(document).ready(function () {
     })
 
     $('#close_popupp').click(function () {
-        $('html, body').css({
+        $('html').css({
             'overflow': 'auto'
         });
         $('#popupp').fadeOut(300);
