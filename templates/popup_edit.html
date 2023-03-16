@@ -31,20 +31,19 @@
             <div class="popup_contents">
                 <div class="left">
                     <div class="photo">
-                        <img src="https://i.postimg.cc/TwPvd3cg/no-image.png" alt="">
+                        <img id="image_box" class="image_box" src="https://i.postimg.cc/TwPvd3cg/no-image.png" alt="">
                     </div>
                 </div>
                 <div class="right">
                     <div class="right_title">
-                        <div class="color">노랑</div>
-                        <p class="name">태서경</p>
+                        <img id="profile_img" src="/static/planet_01.png" class="color" style="border-radius: 100%;">
+                        <p id="name" class="name">태서경</p>
                     </div>
                     <div class="right_input">
                         <input id="title_input" style="font-family: 'Noto Sans KR'; font-size: 11px" placeholder="제목"
                             onfocus="this.placeholder=''" onblur="this.placeholder='제목'" class="ce_title" type="text">
                         <textarea id="text_input" style="font-family: 'Noto Sans KR'; font-size: 11px" placeholder="내용"
-                            onfocus="this.placeholder=''" onblur="this.placeholder='내용'" class="ce_txt"
-                            type="textarea"></textarea>
+                            onfocus="this.placeholder=''" onblur="this.placeholder='내용'" class="ce_txt"></textarea>
                         <input id="img_url_input" style="font-family: 'Noto Sans KR'; font-size: 11px"
                             placeholder="이미지 URL" onfocus="this.placeholder=''" onblur="this.placeholder='이미지 URL'"
                             class="ce_url" type="text">

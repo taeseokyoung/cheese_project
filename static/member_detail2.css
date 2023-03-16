@@ -9,7 +9,10 @@ body {
 }
 
 .home {
-  margin-left: 109.5px;
+  margin: 0px auto auto 0px;
+  background-color: #e8c7c7;
+  border: 0;
+  height: 30px;
 }
 
 .top {
@@ -40,6 +43,10 @@ body {
 .box03 {
   margin-top: auto;
   margin-left: auto;
+}
+
+iframe {
+  display: none;
 }
 
 .info {
@@ -84,6 +91,17 @@ h2 {
 .planet_detail .bottom > button {
   display: block;
   margin: 0 0 0 auto;
+}
+
+#mybgm {
+  background-color: #e8c7c7;
+  border: 0;
+  margin-bottom: o;
+  height: 30px;
+}
+
+#myif {
+  display: block;
 }
 
 .bottom {
@@ -132,14 +150,6 @@ a {
 
 input {
   display: block;
-}
-
-.card_area_edit01 {
-  display: none;
-}
-
-.card_area_edit02 {
-  display: none;
 }
 
 .card_edit {

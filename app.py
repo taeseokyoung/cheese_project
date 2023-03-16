@@ -80,7 +80,6 @@ def add_card():
     card_title_receive = request.form['card_title_give']
     card_text_receive = request.form['card_text_give']
     card_img_receive = request.form['card_img_give']
-    password_receive = request.form['password_give']
 
     time_zone = pytz.timezone('Asia/Seoul')
     current_time = datetime.now(time_zone).strftime("%y-%m-%d %H:%M")
@@ -93,15 +92,15 @@ def add_card():
         'member_num': member_num
     }
 
-    if member_num == 1:
+    if member_num == '1':
         db.member_1.insert_one(doc)
-    elif member_num == 2:
+    elif member_num == '2':
         db.member_2.insert_one(doc)
-    elif member_num == 3:
+    elif member_num == '3':
         db.member_3.insert_one(doc)
-    elif member_num == 4:
+    elif member_num == '4':
         db.member_4.insert_one(doc)
-    elif member_num == 5:
+    elif member_num == '5':
         db.member_5.insert_one(doc)
     else:
         db.member_6.insert_one(doc)
@@ -113,15 +112,15 @@ def add_card():
 def get_card():
     member_num = request.args.get('num')
 
-    if member_num == 1:
+    if member_num == '1':
         target_db = db.member_1.find()
-    elif member_num == 2:
+    elif member_num == '2':
         target_db = db.member_2.find()
-    elif member_num == 3:
+    elif member_num == '3':
         target_db = db.member_3.find()
-    elif member_num == 4:
+    elif member_num == '4':
         target_db = db.member_4.find()
-    elif member_num == 5:
+    elif member_num == '5':
         target_db = db.member_5.find()
     else:
         target_db = db.member_6.find()

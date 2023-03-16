@@ -6,6 +6,34 @@ $(document).ready(function () {
     } else {
         $('#add').hide()
     }
+
+    if (member_num == 1) {
+        $('#name').text('임재훈')
+        $('#profile_img').attr('src', '/static/planet_01.png')
+    } else if (member_num == 2) {
+        $('#name').text('나명흠')
+        $('#profile_img').attr('src', '/static/planet_02.png')
+    } else if (member_num == 3) {
+        $('#name').text('태서경')
+        $('#profile_img').attr('src', '/static/planet_03.png')
+    } else if (member_num == 4) {
+        $('#name').text('노탁근')
+        $('#profile_img').attr('src', '/static/planet_04.png')
+    } else if (member_num == 5) {
+        $('#name').text('이지훈')
+        $('#profile_img').attr('src', '/static/planet_05.png')
+    } else {
+        $('#name').text('양기철')
+    }
+
+    $('#preview').on('click', function () {
+        let img_url = $('#img_url_input').val()
+        $('#image_box').attr('src', img_url)
+    })
+
+    $('#add').on('click', function () {
+        add_card();
+    })
 })
 
 function add_card() {
@@ -25,9 +53,7 @@ function add_card() {
         //console.log(data)
         alert(data['msg'])
         if (data['reload'] == '1') {
-            window.location.reload();
+            window.parent.parent.re_load();
         }
-
-
     });
 }

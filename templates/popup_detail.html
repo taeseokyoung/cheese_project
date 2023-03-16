@@ -16,6 +16,10 @@
 <script>
     let member_num = {{ member_num_give }};
     let object_id = {{ object_id_give }};
+
+    $(document).ready(function () {
+        console.log(member_num, object_id)
+    })
 </script>
 
 <body>
@@ -24,7 +28,7 @@
             <div class="popup_contents">
                 <div class="left">
                     <div class="photo">
-                        <img src="https://i.postimg.cc/TwPvd3cg/no-image.png" alt="">
+                        <img id="image_url" src="https://i.postimg.cc/TwPvd3cg/no-image.png" alt="">
                     </div>
                 </div>
                 <div class="right">
@@ -42,11 +46,22 @@
                         <p id="img_url" class="ce_url">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Necessitatibus,veritatis.</p>
                     </div>
-                    <button class="popup_submit_btn">관리</button>
+                    <button id="edit" class="popup_submit_btn">관리</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- 비밀번호 팝업 -->
+    <div class="popup-wrap popupp-wrap" id="popupp">
+        <div class="popup">
+            <div class="popup-body">
+                <button id="close_popupp" class="close_popup_btn close_popupp_btn">X</button>
+                <iframe src="#" id="popupp_iframe" class="iframe"></iframe>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

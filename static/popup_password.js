@@ -8,6 +8,8 @@ $(document).ready(function () {
         $('#popupe').fadeOut(300);
         window.parent.show_close_btn();
     })
+
+
 })
 
 

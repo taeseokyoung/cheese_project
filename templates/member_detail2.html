@@ -5,22 +5,19 @@
       @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Gothic+Coding&family=Noto+Serif+KR&display=swap');
     </style>
     ;
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="../static/common.css">
+    <link rel="stylesheet" href="../static/popup.css">
     <link rel="stylesheet" href="../static/member_detail2.css" />
-    <link rel="stylesheet" href="../static/common.css" />
     <title>명흠의 행성</title>
   </head>
 
   <body>
-    <div class="home">
-      <a href="./">
-        <button>home</button>
-      </a>
-    </div>
     <div class="planet_detail">
       <div class="top">
+        <button class="home"><a href="./">main</a></button>
         <div class="box01">
           <figure class="planet_detail02"></figure>
         </div>
@@ -37,14 +34,14 @@
           </div>
         </div>
         <div class="box03">
-          <div class="bgm">
-            <button>bgm on</button>
+            <button id="mybgm">bgm replay</button>
+            <iframe id="myif" width="78" height="30" src="https://www.youtube.com/embed/74_yqNBhQbA?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
       </div>
       <div class="bottom">
         <button>+</button>
-          <div class="card_area">
+          <div class="card_area" id="card_area">
             <div class="card_img">
               <a href="#">
                 <img
@@ -165,64 +162,29 @@
                 <p>카드 내용입니다.</p>
               </a>
             </div>
-      <div class="card_area_edit01">
-        <div class="card_edit up">
-          <div class="left">
-            <div class="card_img">
-              <img src="" alt="" />
-            </div>
+             <!-- 상세보기 팝업 -->
+    <div class="popup-wrap popupd-wrap" id="popupd">
+      <div class="popup">
+          <div class="popup-body">
+              <button id="close_popupd" class="close_popup_btn close_popupd_btn">X</button>
+              <iframe src="#" id="popupd_iframe" class="iframe"></iframe>
           </div>
-          <div class="right">
-            <button class="close">X</button>
-            <input
-              placeholder="타이틀을 입력하세요."
-              class="c_title"
-              type="text"
-            />
-            <input
-              placeholder="내용을 20자 이내로 입력하세요."
-              class="c_txt"
-              type="textarea"
-              maxlength="20"
-            />
-            <input placeholder="img url" class="c_url" type="text" />
-            <div class="pw_button">
-              <input
-                placeholder="비밀번호"
-                class="c_pw"
-                type="password"
-                onkeydown="if (event.keyCode === 32) return false;"
-              />
-              <button class="submit">게시</button>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="card_area_edit02">
-        <div class="card_edit">
-          <div class="left">
-            <div class="card_img">
-              <img src="" alt="" />
-            </div>
+  </div>
+
+  <!-- 비밀번호 팝업 -->
+  <div class="popup-wrap popupp-wrap" id="popupp">
+      <div class="popup">
+          <div class="popup-body">
+              <button id="close_popupp" class="close_popup_btn close_popupp_btn">X</button>
+              <iframe src="#" id="popupp_iframe" class="iframe"></iframe>
           </div>
-          <div class="right">
-            <button class="close">X</button>
-            <p class="ce_title">안녕</p>
-            <p class="ce_txt">안녕2</p>
-            <p class="ce_url">넘랴ㅐㅁ저래;ㄷㅁㄹㅁㅈ러</p>
-            <div class="pw_button">
-              <input
-                placeholder="비밀번호"
-                class="c_pw"
-                type="password"
-                onkeydown="if (event.keyCode === 32) return false;"
-              />
-              <button class="submit">수정</button>
-              <button class="delete">삭제</button>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+  </div>
+    </div>    
+    <script src="static/member_detail2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   </body>
 </html>
+
