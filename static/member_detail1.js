@@ -4,14 +4,14 @@ $(document).ready(function () {
     $('#card_area').on('click', '.open_card', function () {
         let object_id = $(this).attr('name')
         $('#popupd_iframe').attr('src', "/popupd?member_num=" + member_num + "&object_id=" + object_id);
-        $('html, body').css({
+        $('html').css({
             'overflow': 'hidden'
         });
         $('#popupd').fadeIn(300);
     })
 
     $('#close_popupd').click(function () {
-        $('html, body').css({
+        $('html').css({
             'overflow': 'auto'
         });
         $('#popupd').fadeOut(300);
@@ -20,14 +20,14 @@ $(document).ready(function () {
 
     $('.open_popupp').click(function () {
         $('#popupp_iframe').attr('src', "/popupp?member_num=" + member_num + "&object_id=0");
-        $('html, body').css({
+        $('html').css({
             'overflow': 'hidden'
         });
         $('#popupp').fadeIn(300);
     })
 
     $('#close_popupp').click(function () {
-        $('html, body').css({
+        $('html').css({
             'overflow': 'auto'
         });
         $('#popupp').fadeOut(300);
