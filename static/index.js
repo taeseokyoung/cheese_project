@@ -1,5 +1,7 @@
-
 $(document).ready(function () {
+
+    // 우주 슬라이드 - 슬릭 슬라이드 사용
+
     $('.planet').slick({
         infinite: true,
         pauseOnHover: true,
@@ -30,4 +32,45 @@ $(document).ready(function () {
             }
         ]
     });
+
 });
+
+
+// 방명록
+$(document).ready(function () {
+    show_content();
+});
+function show_content() {
+    fetch('/guest').then((res) => res.json()).then((data) => {
+        let rows = data['result'];
+        $('.guest_card_area').empty()
+        rows.forEach((a) => {
+            let comment = a['comment']
+            let name = a['name']
+
+            let temp_html = `
+              <div class="guest_card">
+                            <p class="guest_comment">${comment}</p>
+                            <p class="guest_name">${name}</p>
+                            <p class="guest_time">2023-00-00</p>
+                    </div>`
+
+            $('.guest_card_area').append(temp_html)
+        });
+    })
+}
+function save_content() {
+
+    let comment = $('.guest_comment').val()
+    let name = $('.guest_name').val()
+
+    let formData = new FormData();
+    formData.append("comment_give", comment);
+    formData.append("name_give", name);
+
+    fetch('/guest', { method: "POST", body: formData }).then((res) => res.json()).then((data) => {
+        console.log(data);
+        alert(data["msg"]);
+        window.location.reload()
+    });
+}
