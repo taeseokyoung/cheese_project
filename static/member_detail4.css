@@ -47,6 +47,11 @@ p {
     color: #fff;
 }
 
+.box02 h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .script_tag {
     padding-left: 30px;
 }
