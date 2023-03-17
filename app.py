@@ -14,7 +14,6 @@ db = client.cheeseDB
 
 # flask 시작 코드
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
