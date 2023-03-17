@@ -98,6 +98,7 @@ p {
 .open_popupp {
     margin: 0 auto;
     color: transparent;
+    cursor: default;
 }
 
 .info {
