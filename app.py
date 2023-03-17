@@ -13,11 +13,15 @@ client = MongoClient(
 db = client.cheeseDB
 
 # flask 시작 코드
+
+
 @app.route('/')
 def home():
     return render_template('index.html')
 
 # 멤버 고유 번호를 가지고 각자의 디테일 페이지를 불러온다.
+
+
 @app.route('/<int:member_num>')
 def detail_page(member_num):
     if member_num == 1:
@@ -44,6 +48,8 @@ def popup_detail():
     return render_template('popup_detail.html', member_num_give=member_num, object_id_give=object_id)
 
 # 피드 사진 수정할 때의 팝업창
+
+
 @app.route('/popupe')
 def popup_edit():
     member_num = request.args.get('member_num')
@@ -51,6 +57,8 @@ def popup_edit():
     return render_template('popup_edit.html', member_num_give=member_num, object_id_give=object_id)
 
 # 비밀번호 확인을 위한 팝업창
+
+
 @app.route('/popupp')
 def popup_password():
     member_num = request.args.get('member_num')
@@ -116,6 +124,8 @@ def add_card():
     return jsonify({'msg': '등록 완료'})
 
 # DB에서 데이터를 가져와서 피드(클라이언트)에 정보를 보내준다. GET
+
+
 @app.route("/card", methods=["GET"])
 def get_card():
     member_num = request.args.get('num')
@@ -143,6 +153,8 @@ def get_card():
 # 비밀번호 확인 절차. (클라이언트) 인풋값에 번호 입력
 # 서버에서 데이터 베이스에 있는 기존 입력된 비밀번호 값을 가져와서 대조
 # 맞으면 통과표시로 1, 틀리면 0을 보내준다.
+
+
 @app.route("/detail/<int:member_num>", methods=["POST"])
 def check_password(member_num):
     password_receive = request.form['password_give']
@@ -153,6 +165,8 @@ def check_password(member_num):
         return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'check': '0'})
 
 # 피드 상세창 사진 object ID와 매칭시켜서 맞는 사진을 가져온다.
+
+
 @app.route("/detail/<int:member_num>", methods=["GET"])
 def get_card_detail(member_num):
     object_id = request.args.get('object_id')
