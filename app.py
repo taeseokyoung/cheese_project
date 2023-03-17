@@ -6,16 +6,20 @@ from pymongo import MongoClient
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
-
+# 몽고DB 연결 코드
 ca = certifi.where()
 client = MongoClient(
-    'mongodb+srv://cheeseDB:20230313@cheese.glvlzhn.mongodb.net/cheese?retryWrites=true&w=majority', tlsCAFile=ca)
+    'mongodb+srv://cheeseDB:<비밀번호>@cheese.glvlzhn.mongodb.net/<클러스터이름>?retryWrites=true&w=majority', tlsCAFile=ca)
 db = client.cheeseDB
+
+# flask 시작 코드
 
 
 @app.route('/')
 def home():
     return render_template('index.html')
+
+# 멤버 고유 번호를 가지고 각자의 디테일 페이지를 불러온다.
 
 
 @app.route('/<int:member_num>')
@@ -34,12 +38,16 @@ def detail_page(member_num):
         return render_template('member_detail6.html', member_num_give=6)
 
 
+# 피드 사진을 누르면 뜨는 상세 팝업창
+# 멤버 번호와 몽고 DB에서 생기는 피드 각각의 object_id 값을 받아와서 띄운다.
 @app.route('/popupd')
 def popup_detail():
     member_num = request.args.get('member_num')
     object_id = request.args.get('object_id')
 
     return render_template('popup_detail.html', member_num_give=member_num, object_id_give=object_id)
+
+# 피드 사진 수정할 때의 팝업창
 
 
 @app.route('/popupe')
@@ -48,13 +56,14 @@ def popup_edit():
     object_id = request.args.get('object_id')
     return render_template('popup_edit.html', member_num_give=member_num, object_id_give=object_id)
 
+# 비밀번호 확인을 위한 팝업창
+
 
 @app.route('/popupp')
 def popup_password():
     member_num = request.args.get('member_num')
     object_id = request.args.get('object_id')
     return render_template('popup_password.html', member_num_give=member_num, object_id_give=object_id)
-
 
 # @app.route("/visitor", methods=["POST"])
 # def add_guest_book():
@@ -80,7 +89,7 @@ def popup_password():
 
 #     return jsonify({'guest_book_list': guest_book_list})
 
-
+# 피드에 카드를 추가할 때, DB에 정보를 저장한다. POST
 @app.route("/card", methods=["POST"])
 def add_card():
     member_num = request.form['member_num_give']
@@ -114,6 +123,8 @@ def add_card():
 
     return jsonify({'msg': '등록 완료'})
 
+# DB에서 데이터를 가져와서 피드(클라이언트)에 정보를 보내준다. GET
+
 
 @app.route("/card", methods=["GET"])
 def get_card():
@@ -139,6 +150,10 @@ def get_card():
 
     return jsonify({'card_list': card_list})
 
+# 비밀번호 확인 절차. (클라이언트) 인풋값에 번호 입력
+# 서버에서 데이터 베이스에 있는 기존 입력된 비밀번호 값을 가져와서 대조
+# 맞으면 통과표시로 1, 틀리면 0을 보내준다.
+
 
 @app.route("/detail/<int:member_num>", methods=["POST"])
 def check_password(member_num):
@@ -148,6 +163,8 @@ def check_password(member_num):
         return jsonify({'check': '1'})
     else:
         return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'check': '0'})
+
+# 피드 상세창 사진 object ID와 매칭시켜서 맞는 사진을 가져온다.
 
 
 @app.route("/detail/<int:member_num>", methods=["GET"])
@@ -228,8 +245,7 @@ def delete_card_detail(member_num):
         return jsonify({'msg': '비밀번호가 일치하지 않습니다.', 'reload': '0'})
 
 
-# 230316 서경이 방명록
-
+# 방명록 - 화성땅사기
 
 @app.route("/guest", methods=["POST"])
 def guest_post():

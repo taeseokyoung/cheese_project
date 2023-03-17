@@ -86,13 +86,24 @@ p {
 }
 
 .play-pause-button {
+    float: left;
     cursor: pointer;
+    margin-right: 20px;
+}
 
+.play-pause-button,
+.home_btn {
+    font-size: 16px;
+}
+
+.home_btn {
+    cursor: pointer;
 }
 
 .open_popupp {
     margin: 0 auto;
     color: transparent;
+    cursor: default;
 }
 
 .info {
@@ -106,7 +117,7 @@ h2 {
 .planet_detail01 {
     width: 300px;
     height: 300px;
-    background-image: url(https://img.freepik.com/free-photo/spacesuit-helmet-visor-close-up-on-astronaut_53876-95931.jpg?w=996&t=st=1678991511~exp=1678992111~hmac=a78aaf39bc9a136323cf685915600580313e41411a3c735338560e7b3e7e7104);
+    background-image: url(https://i.postimg.cc/151f3RY4/astronaut.png);
     background-position: center;
     background-size: cover;
 }
