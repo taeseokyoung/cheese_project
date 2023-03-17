@@ -37,7 +37,7 @@ window.parent.parent.parent.re_load();
 </code></pre> 
 * 각각의 img 태그를 구분하여 해결(id 값에 ${index}를 넣었다.)  
 <pre><code>onerror="document.getElementById('card_img${index}').style.display='none';
-                                                 document.getElementById('card_txt${index}').style.display='block';"> 
+                    document.getElementById('card_txt${index}').style.display='block';"> 
 </code></pre>
    
       
