@@ -81,8 +81,18 @@ p {
 }
 
 .play-pause-button {
+    float: left;
     cursor: pointer;
+    margin-right: 20px;
+}
 
+.play-pause-button,
+.home_btn {
+    font-size: 16px;
+}
+
+.home_btn {
+    cursor: pointer;
 }
 
 .open_popupp {
