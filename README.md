@@ -41,6 +41,6 @@ window.parent.parent.parent.re_load();
 </code></pre>
    
       
-### extension
+### 사용한 기술 
 * Python - flask, pytz(게시한 시간), bson(object id)
 * MongoDB
