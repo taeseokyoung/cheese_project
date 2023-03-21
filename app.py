@@ -1,3 +1,4 @@
+import os
 import pytz
 from datetime import datetime
 from bson import ObjectId
@@ -14,6 +15,7 @@ db = client.cheeseDB
 
 # flask 시작 코드
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -21,20 +23,36 @@ def home():
 # 멤버 고유 번호를 가지고 각자의 디테일 페이지를 불러온다.
 
 
+# 피드백 받고 수정한 코드
 @app.route('/<int:member_num>')
 def detail_page(member_num):
-    if member_num == 1:
-        return render_template('member_detail1.html', member_num_give=member_num)
-    elif member_num == 2:
-        return render_template('member_detail2.html', member_num_give=member_num)
-    elif member_num == 3:
-        return render_template('member_detail3.html', member_num_give=member_num)
-    elif member_num == 4:
-        return render_template('member_detail4.html', member_num_give=member_num)
-    elif member_num == 5:
-        return render_template('member_detail5.html', member_num_give=member_num)
-    else:
-        return render_template('member_detail6.html', member_num_give=6)
+    template_dir = os.path.join(os.path.dirname(
+        os.path.abspath(__file__)), 'templates')
+    member_list = [f for f in os.listdir(
+        template_dir) if f.startswith('member_detail')]
+
+    for filename in member_list:
+        num = int(filename.split('.')[0].split('detail')[-1])
+        if num == member_num:
+            return render_template(filename, member_num_give=member_num)
+
+    return render_template(member_list[-1], member_num_give=len(member_list)+1)
+
+
+# @app.route('/<int:member_num>')
+# def detail_page(member_num):
+#     if member_num == 1:
+#         return render_template('member_detail1.html', member_num_give=member_num)
+#     elif member_num == 2:
+#         return render_template('member_detail2.html', member_num_give=member_num)
+#     elif member_num == 3:
+#         return render_template('member_detail3.html', member_num_give=member_num)
+#     elif member_num == 4:
+#         return render_template('member_detail4.html', member_num_give=member_num)
+#     elif member_num == 5:
+#         return render_template('member_detail5.html', member_num_give=member_num)
+#     else:
+#         return render_template('member_detail6.html', member_num_give=6)
 
 
 # 피드 사진을 누르면 뜨는 상세 팝업창
